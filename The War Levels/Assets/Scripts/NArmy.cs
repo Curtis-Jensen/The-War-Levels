@@ -23,4 +23,9 @@ public class NArmy : Army
         }
         base.Die();//Do the base death functions
     }
+
+    void OnClick() //When clicked on, it becomes highlighted and can be moved with other clicks.
+    {
+
+    }
 }
