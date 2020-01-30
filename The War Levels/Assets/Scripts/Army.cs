@@ -7,6 +7,7 @@ public abstract class Army : MonoBehaviour
     public float maxAttTirmr;
     public int soldNum;
     public int dmg;
+    public bool nephite;
 
     private float attTimr;
 

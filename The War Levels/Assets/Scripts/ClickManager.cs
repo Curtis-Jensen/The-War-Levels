@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ClickManager : MonoBehaviour
 {
+    public GameObject target;
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -12,7 +14,7 @@ public class ClickManager : MonoBehaviour
 
             clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, 5f));
 
-            Debug.Log(clickPosition);
+            transform.position = clickPosition;//By changing this object's position, the 
         }
     }
 }
