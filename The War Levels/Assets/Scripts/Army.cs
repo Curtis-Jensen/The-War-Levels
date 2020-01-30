@@ -7,7 +7,6 @@ public abstract class Army : MonoBehaviour
     public float maxAttTirmr;
     public int soldNum;
     public int dmg;
-    public bool nephite;
 
     private float attTimr;
 
@@ -21,19 +20,29 @@ public abstract class Army : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void OnCollisionStay2D()
+    void OnCollisionStay2D(Collision2D other)
     {
         attTimr -= Time.deltaTime;
-
-        if(attTimr < 0)
+        if ((other.transform.tag == "Nephites" && this.transform.tag == "Lamanites") || (other.transform.tag == "Lamanites" && this.transform.tag == "Nephites"))
         {
-            Battle();
+            if (attTimr < 0)
+            {
+                Battle();
+            }
         }
+      
+       
+        
     }
 
+    bool Flank()
+    {
+        return false;
+        //return true if LArmy.numobjects > NArmy.numobjects
+    }
     void Battle()
     {
-        soldNum -= dmg;
+        soldNum -= (int)(dmg * Mathf.Exp(1.1f)*soldNum);
         Shrink(dmg);
         attTimr = maxAttTirmr;
         if (soldNum < 1)
