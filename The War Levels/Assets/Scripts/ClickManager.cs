@@ -17,4 +17,11 @@ public class ClickManager : MonoBehaviour
             transform.position = clickPosition;//By changing this object's position, the 
         }
     }
+
+    void OnMouseDown()
+    {
+        target = gameObject;
+
+        Debug.Log(target);
+    }
 }

@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 2853544}
   m_Layer: 0
   m_Name: Nephite Army 2
-  m_TagString: Untagged
+  m_TagString: Nephites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,8 +164,6 @@ MonoBehaviour:
   maxAttTirmr: 0.06666667
   soldNum: 10000
   dmg: 100
-  nephite: 0
-  cManage: {fileID: 0}
   tManage: {fileID: 1328357011}
 --- !u!114 &2853545
 MonoBehaviour:
@@ -1269,7 +1267,7 @@ GameObject:
   - component: {fileID: 896383939}
   m_Layer: 0
   m_Name: Nephite Army
-  m_TagString: Untagged
+  m_TagString: Nephites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1476,8 +1474,6 @@ MonoBehaviour:
   maxAttTirmr: 0.06666667
   soldNum: 10000
   dmg: 100
-  nephite: 0
-  cManage: {fileID: 0}
   tManage: {fileID: 1328357011}
 --- !u!1 &1053021076
 GameObject:
@@ -1810,7 +1806,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1976394242}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.46563014
+  m_Size: 0.46563008
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1868,7 +1864,7 @@ GameObject:
   - component: {fileID: 1438056900}
   m_Layer: 0
   m_Name: Lamanite Army
-  m_TagString: Untagged
+  m_TagString: Lamanites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2075,7 +2071,6 @@ MonoBehaviour:
   maxAttTirmr: 0.06666667
   soldNum: 25000
   dmg: 100
-  nephite: 0
 --- !u!1 &1577334990
 GameObject:
   m_ObjectHideFlags: 0

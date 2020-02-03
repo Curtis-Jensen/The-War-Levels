@@ -22,17 +22,14 @@ public abstract class Army : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D other)
     {
-        attTimr -= Time.deltaTime;
         if ((other.transform.tag == "Nephites" && this.transform.tag == "Lamanites") || (other.transform.tag == "Lamanites" && this.transform.tag == "Nephites"))
         {
+            attTimr -= Time.deltaTime;
             if (attTimr < 0)
             {
                 Battle();
             }
-        }
-      
-       
-        
+        }        
     }
 
     bool Flank()
@@ -40,9 +37,11 @@ public abstract class Army : MonoBehaviour
         return false;
         //return true if LArmy.numobjects > NArmy.numobjects
     }
+
     void Battle()
     {
-        soldNum -= (int)(dmg * Mathf.Exp(1.1f)*soldNum);
+        //soldNum -= (int)(dmg * Mathf.Exp(1.1f)*soldNum);//These exponents are too powerful.
+        soldNum -= dmg;
         Shrink(dmg);
         attTimr = maxAttTirmr;
         if (soldNum < 1)
@@ -57,5 +56,11 @@ public abstract class Army : MonoBehaviour
         theScale.x -= (.0005f * (float)dmg);
         theScale.y -= (.0005f * (float)dmg);
         transform.localScale = theScale;//Applies the vector
+    }
+
+    void OnMouseDown()
+    {
+
+        Debug.Log(name);
     }
 }
