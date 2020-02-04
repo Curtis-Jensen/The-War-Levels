@@ -15,6 +15,8 @@ public class ClickManager : MonoBehaviour
             clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, 5f));
 
             transform.position = clickPosition;//By changing this object's position, the 
+            
+
         }
     }
 }

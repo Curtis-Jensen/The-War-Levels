@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,11 +27,24 @@ public class NArmy : Army
         base.Die();//Do the base death functions
     }
 
+    private void highlight()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+    }
+
+    private void unhighlight()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+    }
+
     void OnMouseDown()
     {
+        highlight();
+
         selected = true;
         foreach (NArmy other in otherNarmies)
         {
+            other.unhighlight();
             other.selected = false;
         }
     }
