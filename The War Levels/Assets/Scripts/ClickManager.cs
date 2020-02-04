@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ClickManager : MonoBehaviour
 {
-    public GameObject target;
+    public NArmy armySubject;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1) && armySubject.selected)
         {
             Vector3 clickPosition = -Vector3.one;
 
@@ -16,12 +16,5 @@ public class ClickManager : MonoBehaviour
 
             transform.position = clickPosition;//By changing this object's position, the 
         }
-    }
-
-    void OnMouseDown()
-    {
-        target = gameObject;
-
-        Debug.Log(target);
     }
 }

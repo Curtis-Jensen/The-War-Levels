@@ -9,6 +9,7 @@ public abstract class Army : MonoBehaviour
     public int dmg;
 
     private float attTimr;
+    private bool activated;
 
     protected virtual void Start()
     {
@@ -56,11 +57,5 @@ public abstract class Army : MonoBehaviour
         theScale.x -= (.0005f * (float)dmg);
         theScale.y -= (.0005f * (float)dmg);
         transform.localScale = theScale;//Applies the vector
-    }
-
-    void OnMouseDown()
-    {
-
-        Debug.Log(name);
     }
 }

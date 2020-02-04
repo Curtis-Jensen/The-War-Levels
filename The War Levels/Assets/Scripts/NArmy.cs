@@ -5,6 +5,8 @@ using UnityEngine;
 public class NArmy : Army
 {
     public TextManager tManage;
+    public NArmy[] otherNarmies;
+    [HideInInspector] public bool selected;
 
     private static int armNum;//How many armies are on the field
 
@@ -24,8 +26,12 @@ public class NArmy : Army
         base.Die();//Do the base death functions
     }
 
-    void OnClick() //When clicked on, it becomes highlighted and can be moved with other clicks.
+    void OnMouseDown()
     {
-
+        selected = true;
+        foreach (NArmy other in otherNarmies)
+        {
+            other.selected = false;
+        }
     }
 }
