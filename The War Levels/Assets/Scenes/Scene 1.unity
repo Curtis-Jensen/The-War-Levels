@@ -669,7 +669,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.399994, y: 16.399994}
+  m_AnchoredPosition: {x: -18.399872, y: 16.399994}
   m_SizeDelta: {x: -165.6, y: -55.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395699627
@@ -2152,7 +2152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAttTirmr: 0.06666667
   soldNum: 25000
-  dmg: 1000
+  dmg: 100
 --- !u!1 &1577334990
 GameObject:
   m_ObjectHideFlags: 0
