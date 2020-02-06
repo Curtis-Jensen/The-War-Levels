@@ -53,7 +53,8 @@ public abstract class Army : MonoBehaviour
 
     void Battle()
     {
-        damage = soldierNumber / otherArmysSoldiers * 100;
+        damage = otherArmysSoldiers / soldierNumber * 100;
+        Debug.Log(name + damage);
         soldierNumber -= damage;
         Shrink(damage);
         attackTimer = maxAttackTimer;
