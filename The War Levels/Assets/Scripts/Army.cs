@@ -4,20 +4,26 @@ using UnityEngine;
 
 public abstract class Army : MonoBehaviour
 {
-    public float maxAttTirmr;
-    public int soldNum;
-    public int dmg;
-    public Army armyInteract;
-    public int adjacentArmies;
+    public float maxAttackTimer;
+    public int soldierNumber;
+    public int damage;
 
-    //Unity API sysdocs
+    private int adjacentArmies;
+    private string myTag;
+    private string otherTag;
+    private int otherArmysSoldiers;
+    private float attackTimer;
 
-
-    private float attTimr;
+    bool IsEnemy(Collision2D other)
+    {
+        myTag = this.transform.tag;
+        otherTag = other.transform.tag;
+        return (otherTag == "Nephites" && myTag == "Lamanites") || (otherTag == "Lamanites" && myTag == "Nephites");
+    }
 
     protected virtual void Start()
     {
-        Shrink(-soldNum);//So that at the start the army is appropriately sized
+        Shrink(-soldierNumber);//So that at the start the army is appropriately sized
     }
 
     protected virtual void Die()
@@ -25,54 +31,43 @@ public abstract class Army : MonoBehaviour
         Destroy(gameObject);
     }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (IsEnemy(other))
+        {
+            otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
+        }
+    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        armyInteract.adjacentArmies++;
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        armyInteract.adjacentArmies--;
-    }
     void OnCollisionStay2D(Collision2D other)
     {
-        if ((other.transform.tag == "Nephites" && this.transform.tag == "Lamanites") || (other.transform.tag == "Lamanites" && this.transform.tag == "Nephites"))
+        if (IsEnemy(other))
         {
-           armyInteract = other.transform.GetComponent<Army>();
-
-            attTimr -= Time.deltaTime;
-            if (attTimr < 0)
+            attackTimer -= Time.deltaTime;
+            if (attackTimer < 0)
             {
                 Battle();
             }
         }
     }
 
-
     void Battle()
     {
-        if (armyInteract.adjacentArmies > 1) { soldNum -= (int)(dmg * (1.5f)); }
-        else soldNum -= dmg;
-
-        Shrink(dmg);
-        attTimr = maxAttTirmr;
-        if (soldNum < 1)
+        damage = soldierNumber / otherArmysSoldiers * 100;
+        soldierNumber -= damage;
+        Shrink(damage);
+        attackTimer = maxAttackTimer;
+        if (soldierNumber < 1)
         {
             Die();
         }
     }
 
-    void Shrink(int dmg)
+    void Shrink(int damage)
     {
         Vector3 theScale = transform.localScale;//Makes the vector to shrink with
-        theScale.x -= (.0005f * (float)dmg);
-        theScale.y -= (.0005f * (float)dmg);
+        theScale.x -= (.0005f * (float)damage);
+        theScale.y -= (.0005f * (float)damage);
         transform.localScale = theScale;//Applies the vector
-    }
-
-    void OnMouseDown()
-    {
-
-        Debug.Log(name);
     }
 }
