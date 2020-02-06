@@ -51,7 +51,7 @@ public abstract class Army : MonoBehaviour
         }
     }
 
-    void Shrink(int dmg)
+    public void Shrink(int dmg)
     {
         Vector3 theScale = transform.localScale;//Makes the vector to shrink with
         theScale.x -= (.0005f * (float)dmg);
