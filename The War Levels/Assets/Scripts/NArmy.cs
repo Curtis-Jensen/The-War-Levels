@@ -23,7 +23,6 @@ public class NArmy : Army
         if (armNum < 1)//If it's the last army
         {
             tManage.MormonsLament();//Share the last message
-            GameObject.Find("Timer").SendMessage("Finish");
         }
         base.Die();//Do the base death functions
     }
