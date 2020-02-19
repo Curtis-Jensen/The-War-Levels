@@ -31,8 +31,6 @@ public abstract class Army : MonoBehaviour
         Destroy(gameObject);
     }
 
-    /*Becoming acquainted with the thing we collided with.
-     */
     void OnCollisionEnter2D(Collision2D other)
     {
         if (IsEnemy(other))
@@ -41,8 +39,6 @@ public abstract class Army : MonoBehaviour
         }
     }
 
-    /*Sees if a collision calls for battle or not.
-     */
     void OnCollisionStay2D(Collision2D other)
     {
         if (IsEnemy(other))
@@ -55,11 +51,10 @@ public abstract class Army : MonoBehaviour
         }
     }
 
-    /*Kill men, call shrink, and eventually die.
-     */
     void Battle()
     {
-        //damage = otherArmysSoldiers / soldierNumber * 100; //An attempt at exponential damage
+        damage = otherArmysSoldiers / soldierNumber * 100;
+        Debug.Log(name + damage);
         soldierNumber -= damage;
         Shrink(damage);
         attackTimer = maxAttackTimer;
@@ -69,13 +64,7 @@ public abstract class Army : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
     public void Shrink(int damage)
-=======
-    /*Also used for growing when using a negative number.
-     */
-    void Shrink(int damage)
->>>>>>> 1f032ce8060359b057e78f77ea592c38e0604580
     {
         Vector3 theScale = transform.localScale;//Makes the vector to shrink with
         theScale.x -= (.0005f * (float)damage);
