@@ -669,7 +669,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: -18.399994, y: 16.399994}
+=======
+  m_AnchoredPosition: {x: -18.399902, y: 16.399994}
+>>>>>>> parent of e016128... hey
   m_SizeDelta: {x: -165.6, y: -55.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395699627
@@ -1576,8 +1580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAttackTimer: 0
-  soldierNumber: 4500
-  damage: 100
+  soldierNumber: 500
+  damage: 0
   tManage: {fileID: 1328357011}
   otherNarmies:
   - {fileID: 2853544}
@@ -2285,9 +2289,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f10233238ab19c499b66f615d1a50b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAttackTimer: 0.25
-  soldierNumber: 10000
-  damage: 100
+  maxAttackTimer: 0
+  soldierNumber: 0
+  damage: 0
   lamanite_army: {fileID: 0}
 --- !u!1 &1577334990
 GameObject:
