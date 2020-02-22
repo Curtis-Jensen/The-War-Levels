@@ -7,6 +7,7 @@ public abstract class Army : MonoBehaviour
     public float maxAttackTimer;
     public int soldierNumber;
     public int damage;
+    public Vector3 target;
 
     private int adjacentArmies;
     private string myTag;
@@ -36,6 +37,10 @@ public abstract class Army : MonoBehaviour
         if (IsEnemy(other))
         {
             otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
+            if(other.transform.position == target)
+            {
+
+            }
         }
     }
 
