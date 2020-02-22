@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAttackTimer: 0
-  soldierNumber: 500
+  soldierNumber: 5000
   damage: 0
   tManage: {fileID: 1328357011}
   otherNarmies:
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAttackTimer: 0
   soldierNumber: 4500
-  damage: 100
+  damage: 0
   tManage: {fileID: 1328357011}
   otherNarmies:
   - {fileID: 2853544}
@@ -2244,8 +2244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAttackTimer: 0.25
   soldierNumber: 10000
-  damage: 100
-  lamanite_army: {fileID: 0}
+  damage: 0
+  lamanite_army: {fileID: 1438056892}
 --- !u!1 &1577334990
 GameObject:
   m_ObjectHideFlags: 0
