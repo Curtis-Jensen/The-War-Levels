@@ -39,7 +39,9 @@ public class Timer : MonoBehaviour
     {
         finished = true;
         timerText.color = Color.yellow;
+        Debug.Log("Pre High score" + PlayerPrefs.GetInt("highScore", 0));
         ScoreManager.updateHighScore((int)t);
-        
+        Debug.Log("High score" + (int)t);
+        Debug.Log("Post High score" + PlayerPrefs.GetInt("highScore", 0));
     }
 }
