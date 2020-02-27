@@ -4,17 +4,28 @@ using UnityEngine;
 
 public abstract class Army : MonoBehaviour
 {
+    public int soldierNumber;//How many soldiers the army has
+    public int baseDamage;//How much damage is done before flanking and other modifiers are applied.
+    public int flankingDefense;//How much defense is gained from being attacked by an army the army is gocussed on.
     public float maxAttackTimer;
-    public int soldierNumber;
-    public int damage;
     public Vector3 target;
 
     private int adjacentArmies;
-    private string myTag;
-    private string otherTag;
+    private int damage;//However much damage actually gets applied to the army.
     private int otherArmysSoldiers;
     private float attackTimer;
+    private string myTag;
+    private string otherTag;
 
+    /* Calls the oposite of shrink to expand the armies to what they need to be.
+     */
+    protected virtual void Start()
+    {
+        Shrink(-soldierNumber);//So that at the start the army is appropriately sized
+    }
+
+    /* Checks to see if the collision was with an enemy by comparing tags.
+     */
     bool IsEnemy(Collision2D other)
     {
         myTag = this.transform.tag;
@@ -22,28 +33,17 @@ public abstract class Army : MonoBehaviour
         return (otherTag == "Nephites" && myTag == "Lamanites") || (otherTag == "Lamanites" && myTag == "Nephites");
     }
 
-    protected virtual void Start()
-    {
-        Shrink(-soldierNumber);//So that at the start the army is appropriately sized
-    }
-
+    /* Destroys self.
+     */
     protected virtual void Die()
     {
         Destroy(gameObject);
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (IsEnemy(other))
-        {
-            otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
-            if(other.transform.position == target)
-            {
-
-            }
-        }
-    }
-
+    /* Called every frame of a collision.
+     * 
+     * When a collision with an enemy has happened long enough they go through battle calculations.
+     */
     void OnCollisionStay2D(Collision2D other)
     {
         if (IsEnemy(other))
@@ -51,17 +51,32 @@ public abstract class Army : MonoBehaviour
             attackTimer -= Time.deltaTime;
             if (attackTimer < 0)
             {
-                Battle();
+                Battle(other);
             }
         }
     }
 
-    void Battle()
+    /*Does the math to see how many men die in this army.
+     * 
+     * Applies flanking damage.
+     * 
+     * There's a commented out line that was an attempt at having bigger armies squash smaller armies.
+     * 
+     * Calls the functions that make the army shrink and die when they have no men.
+     */
+    void Battle(Collision2D other)
     {
-        damage = otherArmysSoldiers / soldierNumber * 100;
+        otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
+        if (other.transform.position == target)
+        {
+            damage /= flankingDefense;
+        }
+
+        //damage = otherArmysSoldiers / soldierNumber * baseDamage;
         Debug.Log(name + damage);
         soldierNumber -= damage;
         Shrink(damage);
+
         attackTimer = maxAttackTimer;
         if (soldierNumber < 1)
         {
@@ -69,6 +84,11 @@ public abstract class Army : MonoBehaviour
         }
     }
 
+    /* Changes the size of the army (typically when an army takes damage)
+     * 
+     * We should probably have this script change the amount of men the army has so we don't have duplicate lines of
+     * code, but we'll optimize that later... >.>
+     */
     void Shrink(int damage)
     {
         Vector3 theScale = transform.localScale;//Makes the vector to shrink with
