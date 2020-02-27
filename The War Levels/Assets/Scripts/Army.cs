@@ -44,6 +44,23 @@ public abstract class Army : MonoBehaviour
      * 
      * When a collision with an enemy has happened long enough they go through battle calculations.
      */
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (IsEnemy(other))
+        {
+            otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
+            if(other.transform.position == target)
+            {
+
+            }
+        }
+        if (other.transform.tag == "Projectile" && gameObject.tag == "Lamanites")
+        {
+            Shrink(damage * 2);
+            Destroy(other.gameObject);
+        }
+    }
+
     void OnCollisionStay2D(Collision2D other)
     {
         if (IsEnemy(other))
@@ -72,7 +89,6 @@ public abstract class Army : MonoBehaviour
             damage /= flankingDefense;
         }
 
-        //damage = otherArmysSoldiers / soldierNumber * baseDamage;
         Debug.Log(name + damage);
         soldierNumber -= damage;
         Shrink(damage);
@@ -84,12 +100,13 @@ public abstract class Army : MonoBehaviour
         }
     }
 
+
     /* Changes the size of the army (typically when an army takes damage)
      * 
      * We should probably have this script change the amount of men the army has so we don't have duplicate lines of
      * code, but we'll optimize that later... >.>
      */
-    void Shrink(int damage)
+    public void Shrink(int damage)
     {
         Vector3 theScale = transform.localScale;//Makes the vector to shrink with
         theScale.x -= (.0005f * (float)damage);

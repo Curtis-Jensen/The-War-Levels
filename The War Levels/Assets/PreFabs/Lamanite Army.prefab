@@ -97,11 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f10233238ab19c499b66f615d1a50b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAttTirmr: 0.06666667
-  soldNum: 25000
-  dmg: 100
-  armyInteract: {fileID: 0}
-  adjacentArmies: 0
+  maxAttackTimer: 0.25
+  soldierNumber: 0
+  damage: 100
   lamanite_army: {fileID: 1824860909078207692}
 --- !u!114 &1824860909078207665
 MonoBehaviour:

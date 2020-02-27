@@ -162,11 +162,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAttackTimer: 0
-  soldierNumber: 500
-  damage: 0
+  soldierNumber: 5000
+  damage: 100
+  target: {x: 0, y: 0, z: 0}
   tManage: {fileID: 1328357011}
   otherNarmies:
   - {fileID: 896383939}
+  spear: {fileID: 6391598586334554031, guid: fd7e83942d611f846a95e5f5a9aa80cf, type: 3}
   selected: 0
 --- !u!114 &2853545
 MonoBehaviour:
@@ -669,7 +671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.400055, y: 16.399994}
+  m_AnchoredPosition: {x: -18.400146, y: 16.399994}
   m_SizeDelta: {x: -165.6, y: -55.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395699627
@@ -1535,9 +1537,11 @@ MonoBehaviour:
   maxAttackTimer: 0
   soldierNumber: 4500
   damage: 100
+  target: {x: 0, y: 0, z: 0}
   tManage: {fileID: 1328357011}
   otherNarmies:
   - {fileID: 2853544}
+  spear: {fileID: 6391598586334554031, guid: fd7e83942d611f846a95e5f5a9aa80cf, type: 3}
   selected: 0
 --- !u!1 &981958581
 GameObject:
@@ -1667,7 +1671,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -1691,13 +1695,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053021076}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: -10, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
 --- !u!1 &1155628393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,8 +1983,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1976394243}
   m_HandleRect: {fileID: 1976394242}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.46563014
+  m_Value: 0.9999999
+  m_Size: 0.46563005
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2244,8 +2248,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAttackTimer: 0.25
   soldierNumber: 10000
-  damage: 100
-  lamanite_army: {fileID: 0}
+  damage: 1000
+  target: {x: 0, y: 0, z: 0}
+  lamanite_army: {fileID: 1438056892}
 --- !u!1 &1577334990
 GameObject:
   m_ObjectHideFlags: 0
