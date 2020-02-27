@@ -42,6 +42,11 @@ public abstract class Army : MonoBehaviour
 
             }
         }
+        if (other.transform.tag == "Projectile" && gameObject.tag == "Lamanites")
+        {
+            Shrink(damage * 2);
+            Destroy(other.gameObject);
+        }
     }
 
     void OnCollisionStay2D(Collision2D other)

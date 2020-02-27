@@ -7,6 +7,7 @@ public class NArmy : Army
 {
     public TextManager tManage;
     public NArmy[] otherNarmies;
+    public GameObject spear;
     [HideInInspector] public bool selected;
 
     private static int armNum;//How many armies are on the field
@@ -15,6 +16,16 @@ public class NArmy : Army
     {
         armNum++;
         base.Start();
+    }
+    private void Update()
+    {
+        if(selected)
+        {
+            if(Input.GetKeyUp("q"))
+            {
+                fire_projectile("Spear");
+            }
+        }
     }
 
     protected override void Die()
@@ -25,6 +36,14 @@ public class NArmy : Army
             tManage.MormonsLament();//Share the last message
         }
         base.Die();//Do the base death functions
+    }
+
+    internal void fire_projectile(string v)
+    {
+       if (v == "Spear")
+        {
+            Instantiate(spear, transform.position, Quaternion.identity, transform.parent);
+        }
     }
 
     private void highlight()
