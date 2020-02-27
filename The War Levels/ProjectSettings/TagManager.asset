@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Nephites
   - Lamanites
+  - Projectile
   layers:
   - Default
   - TransparentFX

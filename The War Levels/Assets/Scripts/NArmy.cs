@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class NArmy : Army
 {
-    public Timer timer;
     public TextManager tManage;
     public NArmy[] otherNarmies;
     public GameObject spear;
@@ -34,7 +33,6 @@ public class NArmy : Army
         armNum--;
         if (armNum < 1)//If it's the last army
         {
-            timer.Finish();
             tManage.MormonsLament();//Share the last message
         }
         base.Die();//Do the base death functions
@@ -44,7 +42,8 @@ public class NArmy : Army
     {
        if (v == "Spear")
         {
-            Instantiate(spear, transform.position, Quaternion.identity, transform.parent);
+            GameObject new_spear = Instantiate(spear, transform.position, Quaternion.identity, transform.parent);
+            
         }
     }
 
