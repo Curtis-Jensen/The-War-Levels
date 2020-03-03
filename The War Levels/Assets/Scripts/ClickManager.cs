@@ -21,6 +21,8 @@ public class ClickManager : MonoBehaviour
         }
     }
 
+    /* Makes up for the tilt of the camera
+     */
     public Vector3 GetWorldPositionOnPlane(Vector3 screenPosition, float z)
     {
         Ray ray = Camera.main.ScreenPointToRay(screenPosition);

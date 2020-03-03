@@ -12,11 +12,15 @@ public class TextManager : MonoBehaviour
     [TextArea(3, 10)]
     public string outroText;
 
+    /*
+     */
     public void CloseText()//Closes text
     {
         TextToggle(false);
     }
 
+    /* See above.
+     */
     public void OpenText()//Opens text
     {
         TextToggle(true);
