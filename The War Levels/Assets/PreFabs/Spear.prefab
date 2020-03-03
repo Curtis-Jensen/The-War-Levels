@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6199066496288863762}
   - component: {fileID: 6619529357443462578}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Spear
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
