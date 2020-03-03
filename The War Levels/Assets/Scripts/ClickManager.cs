@@ -16,7 +16,7 @@ public class ClickManager : MonoBehaviour
         if (Input.GetMouseButtonDown(1) && armySubject.selected)
         {
             clickPosition = GetWorldPositionOnPlane(Input.mousePosition, 0);
-            Debug.Log(Input.mousePosition + " | " + clickPosition);
+
             transform.position = clickPosition; 
         }
     }
