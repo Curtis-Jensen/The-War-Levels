@@ -73,16 +73,18 @@ public abstract class Army : MonoBehaviour
         }
     }
 
-    /*Does the math to see how many men die in this army.
+    /* Does the math to see how many men die in this army,
      * 
-     * Applies flanking damage.
+     * Applies flanking effects by not taking as much damage if the enemy army is
+     * being targeted...
      * 
-     * There's a commented out line that was an attempt at having bigger armies squash smaller armies.
+     * Have bigger armies squash smaller armies...
      * 
      * Calls the functions that make the army shrink and die when they have no men.
      */
     void Battle(Collision2D other)
     {
+        damage = baseDamage;
         otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
         if (other.transform.position == target)
         {

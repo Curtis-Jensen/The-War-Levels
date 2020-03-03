@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soldierNumber: 5000
-  baseDamage: 0
+  baseDamage: 100
   flankingDefense: 0
   maxAttackTimer: 0
   target: {x: 0, y: 0, z: 0}
@@ -609,7 +609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &145506675
 Transform:
   m_ObjectHideFlags: 0
@@ -705,7 +705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &197215041
 Transform:
   m_ObjectHideFlags: 0
@@ -1067,7 +1067,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.400116, y: 16.399994}
+  m_AnchoredPosition: {x: -18.400146, y: 16.399994}
   m_SizeDelta: {x: -165.6, y: -55.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395699627
@@ -2222,8 +2222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soldierNumber: 4500
-  baseDamage: 0
-  flankingDefense: 0
+  baseDamage: 100
+  flankingDefense: 10
   maxAttackTimer: 0
   target: {x: 0, y: 0, z: 0}
   tManage: {fileID: 1328357011}
@@ -2885,7 +2885,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1976394242}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.46563008
+  m_Size: 0.46563014
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3148,8 +3148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soldierNumber: 10000
-  baseDamage: 0
-  flankingDefense: 0
+  baseDamage: 100
+  flankingDefense: 10
   maxAttackTimer: 0.25
   target: {x: 0, y: 0, z: 0}
   lamanite_army: {fileID: 1438056892}

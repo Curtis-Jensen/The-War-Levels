@@ -12,23 +12,27 @@ public class TextManager : MonoBehaviour
     [TextArea(3, 10)]
     public string outroText;
 
-    /*
+    /* Just calls TextToggle() for closing.  Important code occurs in TextToggle().
+     * But it does reset the position of the scrollbar so it's not on the bottom next time it opens.
      */
     public void CloseText()//Closes text
     {
+        scrollbar.value = 1f;
         TextToggle(false);
     }
 
-    /* See above.
+    /* Opposite of above.
      */
     public void OpenText()//Opens text
     {
         TextToggle(true);
     }
 
+    /* Toggles the activity of the text objects,
+     * resets the position of the scrollbar
+     */
     void TextToggle(bool opening)//Where the actual code of close and open text take place
     {
-        scrollbar.value = 1f;//Trying to reset the scrollbar's position when the window reopens
         panel.SetActive(opening);
         aICTPbutton.SetActive(opening);
     }
