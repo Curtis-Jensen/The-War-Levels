@@ -68,8 +68,19 @@ public abstract class Army : MonoBehaviour
         }
     }
     /**
-     * Damages unit by calling shrink and changing soilder number at the same time CALL THIS IF YOU NEED TO DAMAGE SOMETHING.
-     * 
+    * Damages unit by calling shrink and changing soilder number at the same time CALL THIS IF YOU NEED TO DAMAGE SOMETHING.
+    * 
+    **/
+    void damage_unit(int number)
+    {
+        Shrink(damage);
+        soldierNumber -= damage;
+    }
+    /**
+    * Damages unit by calling shrink and changing soilder number at the same time CALL THIS IF YOU NEED TO DAMAGE SOMETHING.
+    * 
+    * Can also be multiplied by a number, if no multiplication is intended, just put 1 in the second parameter.
+    * 
     **/
     void damage_unit(int number, int multiplier)
     {
