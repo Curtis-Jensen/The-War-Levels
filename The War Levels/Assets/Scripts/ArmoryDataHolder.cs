@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class ArmoryDataHolder : MonoBehaviour
 {
-    public float baseDamage;
+    /* This class exists to make it easier to set numbers for multiple armies at once.
+     */
+    public int baseDamage;
+    public float maxAttackTimer;
+    public int flankingDefense;//How much defense is gained from being attacked by an army the army is gocussed on.
 }

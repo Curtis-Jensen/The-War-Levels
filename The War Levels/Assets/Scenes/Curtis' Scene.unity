@@ -134,7 +134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2853543
 Transform:
   m_ObjectHideFlags: 0
@@ -161,11 +161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5fab8a63a0b39409ecdedc2ec8235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soldierNumber: 5000
-  baseDamage: 0
-  flankingDefense: 0
-  maxAttackTimer: 0
+  soldierNumber: 2000
   target: {x: 0, y: 0, z: 0}
+  data: {fileID: 2084322748}
   tManage: {fileID: 1328357011}
   otherNarmies:
   - {fileID: 896383939}
@@ -1885,11 +1883,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5fab8a63a0b39409ecdedc2ec8235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soldierNumber: 4500
-  baseDamage: 100
-  flankingDefense: 0
-  maxAttackTimer: 0.1
+  soldierNumber: 2000
   target: {x: 0, y: 0, z: 0}
+  data: {fileID: 2084322748}
   tManage: {fileID: 1328357011}
   otherNarmies:
   - {fileID: 2853544}
@@ -2787,10 +2783,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soldierNumber: 10000
-  baseDamage: 100
-  flankingDefense: 0
-  maxAttackTimer: 0.1
   target: {x: 0, y: 0, z: 0}
+  data: {fileID: 2084322748}
   lamanite_army: {fileID: 1438056892}
 --- !u!1 &1533524738
 GameObject:
@@ -3201,6 +3195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2084322747}
+  - component: {fileID: 2084322748}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -3226,3 +3221,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2084322748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084322746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ae5c18de99a7d4abf2f1bc504f4214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 100
+  maxAttackTimer: 0.1
+  flankingDefense: 10

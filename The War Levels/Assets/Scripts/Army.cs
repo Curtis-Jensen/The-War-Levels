@@ -5,22 +5,29 @@ using UnityEngine;
 public abstract class Army : MonoBehaviour
 {
     public int soldierNumber;//How many soldiers the army has
-    public int baseDamage;//How much damage is done before flanking and other modifiers are applied.
-    public int flankingDefense;//How much defense is gained from being attacked by an army the army is gocussed on.
-    public float maxAttackTimer;
     public Vector3 target;
+    public ArmoryDataHolder data;
 
+    private int baseDamage;//How much damage is done before flanking and other modifiers are applied.
+    private int flankingDefense;//How much defense is gained from being attacked by an army the army is gocussed on.
     private int adjacentArmies;
     private int damage;//However much damage actually gets applied to the army.
     private int otherArmysSoldiers;
+    private float maxAttackTimer;
     private float attackTimer;
     private string myTag;
     private string otherTag;
 
     /* Calls the oposite of shrink to expand the armies to what they need to be.
+     * 
+     * Gets the data from ArmoryDataHolder.
      */
     protected virtual void Start()
     {
+        baseDamage      = data.baseDamage;
+        flankingDefense = data.flankingDefense;
+        maxAttackTimer  = data.maxAttackTimer;
+
         Shrink(-soldierNumber);//So that at the start the army is appropriately sized
     }
 
@@ -101,7 +108,6 @@ public abstract class Army : MonoBehaviour
             Die();
         }
     }
-
 
     /* Changes the size of the army (typically when an army takes damage)
      * 
