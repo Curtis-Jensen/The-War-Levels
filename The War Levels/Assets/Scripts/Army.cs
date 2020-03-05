@@ -63,9 +63,18 @@ public abstract class Army : MonoBehaviour
         }
         if (other.transform.tag == "Projectile" && gameObject.tag == "Lamanites")
         {
-            Shrink(damage * 2);
+            damage_unit(damage, 2);
             Destroy(other.gameObject);
         }
+    }
+    /**
+     * Damages unit by calling shrink and changing soilder number at the same time CALL THIS IF YOU NEED TO DAMAGE SOMETHING.
+     * 
+    **/
+    void damage_unit(int number, int multiplier)
+    {
+        Shrink(damage * multiplier);
+        soldierNumber -= damage * multiplier;
     }
 
     void OnCollisionStay2D(Collision2D other)
