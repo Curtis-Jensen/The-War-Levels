@@ -63,7 +63,7 @@ public abstract class Army : MonoBehaviour
         }
         if (other.transform.tag == "Projectile" && gameObject.tag == "Lamanites")
         {
-            damage_unit(damage, 2);
+            Damage_unit(damage, 2);
             Destroy(other.gameObject);
         }
     }
@@ -71,7 +71,7 @@ public abstract class Army : MonoBehaviour
     * Damages unit by calling shrink and changing soilder number at the same time CALL THIS IF YOU NEED TO DAMAGE SOMETHING.
     * 
     **/
-    void damage_unit(int number)
+    void Damage_unit(int number)
     {
         Shrink(damage);
         soldierNumber -= damage;
@@ -82,7 +82,7 @@ public abstract class Army : MonoBehaviour
     * Can also be multiplied by a number, if no multiplication is intended, just put 1 in the second parameter.
     * 
     **/
-    void damage_unit(int number, int multiplier)
+    void Damage_unit(int number, int multiplier)
     {
         Shrink(damage * multiplier);
         soldierNumber -= damage * multiplier;
