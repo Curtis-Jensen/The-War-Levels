@@ -161,8 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5fab8a63a0b39409ecdedc2ec8235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soldierNumber: 2000
-  target: {x: 0, y: 0, z: 0}
+  soldierNumber: 4500
   data: {fileID: 2084322748}
   tManage: {fileID: 1328357011}
   otherNarmies:
@@ -957,6 +956,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395699625}
   m_CullTransparentMesh: 0
+--- !u!1 &396542236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396542237}
+  m_Layer: 0
+  m_Name: LArmy 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &396542237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396542236}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1184919756}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &406009035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1883,8 +1912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5fab8a63a0b39409ecdedc2ec8235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soldierNumber: 2000
-  target: {x: 0, y: 0, z: 0}
+  soldierNumber: 4500
   data: {fileID: 2084322748}
   tManage: {fileID: 1328357011}
   otherNarmies:
@@ -2210,7 +2238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1184919756}
   m_Layer: 0
-  m_Name: Click Managers
+  m_Name: Navigation Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2229,6 +2257,7 @@ Transform:
   m_Children:
   - {fileID: 768218177}
   - {fileID: 80981023}
+  - {fileID: 396542237}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2783,7 +2812,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soldierNumber: 10000
-  target: {x: 0, y: 0, z: 0}
   data: {fileID: 2084322748}
   lamanite_army: {fileID: 1438056892}
 --- !u!1 &1533524738
