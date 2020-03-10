@@ -40,13 +40,6 @@ public abstract class Army : MonoBehaviour
         return (otherTag == "Nephites" && myTag == "Lamanites") || (otherTag == "Lamanites" && myTag == "Nephites");
     }
 
-    /* Destroys self.
-     */
-    protected virtual void Die()
-    {
-        Destroy(gameObject);
-    }
-
     /* Called every frame of a collision.
      * 
      * When a collision with an enemy has happened long enough they go through battle calculations.
@@ -140,5 +133,12 @@ public abstract class Army : MonoBehaviour
         theScale.x -= (.0005f * (float)damage);
         theScale.y -= (.0005f * (float)damage);
         transform.localScale = theScale;//Applies the vector
+    }
+
+    /* Destroys self.
+    */
+    protected virtual void Die()
+    {
+        Destroy(gameObject);
     }
 }

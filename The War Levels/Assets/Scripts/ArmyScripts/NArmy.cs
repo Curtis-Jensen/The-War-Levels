@@ -9,7 +9,7 @@ public class NArmy : Army
     public GameObject spear;
     [HideInInspector] public bool selected;
 
-    private NArmy[] narmies;
+    public static NArmy[] narmies;
     private static int armNum;//How many armies are on the field
 
     /* In order to properly know when all Nephites have died at the end
@@ -18,8 +18,13 @@ public class NArmy : Army
     protected override void Start()
     {
         armNum++;
-        narmies = gameObject.transform.parent.GetComponentsInChildren<NArmy>();
+        GenerateNarmies();
         base.Start();
+    }
+
+    public void GenerateNarmies()
+    {
+        narmies = gameObject.transform.parent.GetComponentsInChildren<NArmy>();
     }
 
     /* Checks to see if certain buttons have been pressed.
@@ -33,19 +38,6 @@ public class NArmy : Army
                 fire_projectile("Spear");
             }
         }
-    }
-
-    /* When the last army has died bring up the end screen.
-     */
-    protected override void Die()
-    {
-        armNum--;
-        if (armNum < 1)
-        {
-            tManage.MormonsLament();
-        }
-
-        base.Die();
     }
 
     /* Make the projectile appear,
@@ -78,14 +70,34 @@ public class NArmy : Army
      * 
      * If we run into performance issues this could be optimized to only deselect the old army and not eveyone.
      */
-    void OnMouseDown()
+    private void OnMouseDown()
     {
-        foreach (NArmy narmy in narmies)
-        {
+        foreach (NArmy narmy in narmies) { 
+        
+            if(narmy == null)
+            {
+                GenerateNarmies();
+                OnMouseDown();
+                break;
+            }
             narmy.unhighlight();
             narmy.selected = false;
         }
         selected = true;
         highlight();
+    }
+
+    /* When the last army has died bring up the end screen.
+     * Restructure the narmies but not somehow after we're dead...
+     */
+    protected override void Die()
+    {
+        armNum--;
+        if (armNum < 1)
+        {
+            tManage.MormonsLament();
+        }
+
+        base.Die();
     }
 }
