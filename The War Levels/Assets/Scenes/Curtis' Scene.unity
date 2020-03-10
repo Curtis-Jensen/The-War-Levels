@@ -162,10 +162,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soldierNumber: 4500
+  target: {x: 0, y: 0, z: 0}
   data: {fileID: 2084322748}
   tManage: {fileID: 1328357011}
-  otherNarmies:
-  - {fileID: 896383939}
   spear: {fileID: 6391598586334554031, guid: fd7e83942d611f846a95e5f5a9aa80cf, type: 3}
   selected: 0
 --- !u!114 &2853545
@@ -965,6 +964,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 396542237}
+  - component: {fileID: 396542238}
   m_Layer: 0
   m_Name: LArmy 1
   m_TagString: Untagged
@@ -986,6 +986,19 @@ Transform:
   m_Father: {fileID: 1184919756}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &396542238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396542236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4da86f0570b34344b8eb761d678bd32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 1438056894}
 --- !u!1 &406009035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,7 +1782,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896383930}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -7.02, y: 0, z: 0}
+  m_LocalPosition: {x: -16.88, y: 0, z: 0}
   m_LocalScale: {x: 0.0005, y: 0.0005, z: 1}
   m_Children: []
   m_Father: {fileID: 406009036}
@@ -1913,10 +1926,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soldierNumber: 4500
+  target: {x: 0, y: 0, z: 0}
   data: {fileID: 2084322748}
   tManage: {fileID: 1328357011}
-  otherNarmies:
-  - {fileID: 2853544}
   spear: {fileID: 6391598586334554031, guid: fd7e83942d611f846a95e5f5a9aa80cf, type: 3}
   selected: 0
 --- !u!1 &981958581
@@ -2237,6 +2249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1184919756}
+  - component: {fileID: 1184919757}
   m_Layer: 0
   m_Name: Navigation Managers
   m_TagString: Untagged
@@ -2252,7 +2265,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184919755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.021461, y: -0.0014220661, z: 0.017145764}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 768218177}
@@ -2261,6 +2274,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1184919757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184919755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46980f2337e5df4f91b34e66d05c3ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nephites: {fileID: 406009035}
 --- !u!1 &1250533691
 GameObject:
   m_ObjectHideFlags: 0
@@ -2751,7 +2777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 896383932}
+  target: {fileID: 396542237}
 --- !u!61 &1438056899
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2812,6 +2838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soldierNumber: 10000
+  target: {x: 0, y: 0, z: 0}
   data: {fileID: 2084322748}
   lamanite_army: {fileID: 1438056892}
 --- !u!1 &1533524738

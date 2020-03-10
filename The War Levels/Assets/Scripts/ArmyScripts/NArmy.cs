@@ -6,10 +6,10 @@ using UnityEngine;
 public class NArmy : Army
 {
     public TextManager tManage;
-    public NArmy[] otherNarmies;
     public GameObject spear;
     [HideInInspector] public bool selected;
 
+    private NArmy[] narmies;
     private static int armNum;//How many armies are on the field
 
     /* In order to properly know when all Nephites have died at the end
@@ -18,6 +18,7 @@ public class NArmy : Army
     protected override void Start()
     {
         armNum++;
+        narmies = gameObject.transform.parent.GetComponentsInChildren<NArmy>();
         base.Start();
     }
 
@@ -43,6 +44,7 @@ public class NArmy : Army
         {
             tManage.MormonsLament();
         }
+
         base.Die();
     }
 
@@ -78,13 +80,12 @@ public class NArmy : Army
      */
     void OnMouseDown()
     {
-        highlight();
-
-        selected = true;
-        foreach (NArmy other in otherNarmies)
+        foreach (NArmy narmy in narmies)
         {
-            other.unhighlight();
-            other.selected = false;
+            narmy.unhighlight();
+            narmy.selected = false;
         }
+        selected = true;
+        highlight();
     }
 }

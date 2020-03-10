@@ -11,7 +11,7 @@ public abstract class Army : MonoBehaviour
     private int baseDamage;//How much damage is done before flanking and other modifiers are applied.
     private int flankingDefense;//How much defense is gained from being attacked by an army the army is gocussed on.
     private int adjacentArmies;
-    private int damage;//However much damage actually gets applied to the army.
+    private int totalDamage;//However much damage actually gets applied to the army.
     private int otherArmysSoldiers;
     private float maxAttackTimer;
     private float attackTimer;
@@ -63,7 +63,7 @@ public abstract class Army : MonoBehaviour
         }
         if (other.transform.tag == "Projectile" && gameObject.tag == "Lamanites")
         {
-            Damage_unit(damage, 2);
+            Damage_unit(totalDamage, 2);
             Destroy(other.gameObject);
         }
     }
@@ -73,19 +73,18 @@ public abstract class Army : MonoBehaviour
     **/
     void Damage_unit(int number)
     {
-        Shrink(damage);
-        soldierNumber -= damage;
+        Shrink(totalDamage);
+        soldierNumber -= totalDamage;
     }
     /**
     * Damages unit by calling shrink and changing soilder number at the same time CALL THIS IF YOU NEED TO DAMAGE SOMETHING.
     * 
     * Can also be multiplied by a number, if no multiplication is intended, just put 1 in the second parameter.
-    * 
     **/
     void Damage_unit(int number, int multiplier)
     {
-        Shrink(damage * multiplier);
-        soldierNumber -= damage * multiplier;
+        Shrink(totalDamage * multiplier);
+        soldierNumber -= totalDamage * multiplier;
     }
 
     void OnCollisionStay2D(Collision2D other)
@@ -100,27 +99,28 @@ public abstract class Army : MonoBehaviour
         }
     }
 
-    /* Does the math to see how many men die in this army,
+    /* Does the math to see how many men die in this army by:
      * 
-     * Applies flanking effects by not taking as much damage if the enemy army is
-     * being targeted...
+     * Resetting the total damage from any previous modifiers,
      * 
-     * Have bigger armies squash smaller armies...
+     * Applying flanking effects by not taking as much damage if the enemy army is
+     * being targeted,
      * 
-     * Calls the functions that make the army shrink and die when they have no men.
+     * Having bigger armies squash smaller armies...
+     * 
+     * Calling the functions that make the army shrink and die when they have no men.
      */
     void Battle(Collision2D other)
     {
-        damage = baseDamage;
-        otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
+        totalDamage = baseDamage;
+        //otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
         if (other.transform.position == target)
         {
-            damage /= flankingDefense;
+            totalDamage /= flankingDefense;
         }
 
-        Debug.Log(name + damage);
-        soldierNumber -= damage;
-        Shrink(damage);
+        soldierNumber -= totalDamage;
+        Shrink(totalDamage);
 
         attackTimer = maxAttackTimer;
         if (soldierNumber < 1)
