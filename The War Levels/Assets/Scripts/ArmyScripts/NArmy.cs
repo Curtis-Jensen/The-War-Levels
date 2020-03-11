@@ -7,6 +7,10 @@ public class NArmy : Army
 {
     public TextManager tManage;
     public GameObject spear;
+    public GameObject FirePoint;
+    public Rigidbody2D rb;
+    private float spear_speed = 100f;
+
     [HideInInspector] public bool selected;
 
     public static NArmy[] narmies;
@@ -49,6 +53,9 @@ public class NArmy : Army
        if (v == "Spear")
         {
             GameObject new_spear = Instantiate(spear, transform.position, Quaternion.identity, transform.parent);
+            Vector3 mouse_point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 direction = (mouse_point - transform.position).normalized;
+            new_spear.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x * spear_speed, direction.y * spear_speed);
         }
     }
 

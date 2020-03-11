@@ -166,6 +166,8 @@ MonoBehaviour:
   data: {fileID: 2084322748}
   tManage: {fileID: 1328357011}
   spear: {fileID: 6391598586334554031, guid: fd7e83942d611f846a95e5f5a9aa80cf, type: 3}
+  FirePoint: {fileID: 0}
+  rb: {fileID: 0}
   selected: 0
 --- !u!114 &2853545
 MonoBehaviour:
@@ -1930,6 +1932,8 @@ MonoBehaviour:
   data: {fileID: 2084322748}
   tManage: {fileID: 1328357011}
   spear: {fileID: 6391598586334554031, guid: fd7e83942d611f846a95e5f5a9aa80cf, type: 3}
+  FirePoint: {fileID: 0}
+  rb: {fileID: 0}
   selected: 0
 --- !u!1 &981958581
 GameObject:
@@ -2574,8 +2578,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1976394243}
   m_HandleRect: {fileID: 1976394242}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.46563014
+  m_Value: 0.9999999
+  m_Size: 0.46563005
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
