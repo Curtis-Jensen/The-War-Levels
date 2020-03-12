@@ -31,24 +31,35 @@ public class LamaniteTargeter : MonoBehaviour
     }
 
     /* Checks to see which enemy army is closest to the army the script is attached to.
-     * The Nephite armies need to be reaccounted for when one of them dies.
+     * 
+     * If there is only one Narmy so that no comarisons can take place this should return 1.
+     * 
+     * Makes them go to (0,0) (The Nephite's parent) if broken or there are no NArmies to chase.
+     * 
+     * The index of the for loop should start at 2 because the 0 index is the parent of the
+     * Nephites, which should not be considered a viable target.
      */
     int DetermineShortestDistance()
     {
-        int theSmallestOne = 1;
-        if (possibleTargets.Length > 1)
+        int theClosestIndex = 0;
+        if (possibleTargets.Length > 2)
         {
-            for (int i = 1; i < possibleTargets.Length; i++)
+            for (int i = 2; i < possibleTargets.Length; i++)
             {
                 if (Vector3.Distance(possibleTargets[i].position, transform.position) <
                     Vector3.Distance(possibleTargets[i - 1].position, transform.position) &&
                     possibleTargets[i] != null)
                 {
-                    theSmallestOne = i;
+                    theClosestIndex = i;
                 }
             }
         }
-        return theSmallestOne;
+        else if (possibleTargets.Length > 1)
+        {
+            theClosestIndex = 1;
+        }
+
+        return theClosestIndex;
     }
 
     /* Called at start or when an army is killed or created. 
