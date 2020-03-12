@@ -7,14 +7,15 @@ public class NArmy : Army
 {
     public TextManager tManage;
     public GameObject spear;
-    public GameObject FirePoint;
-    public Rigidbody2D rb;
-    private float spear_speed = 100f;
+    public float spear_speed = 100f;
+
 
     [HideInInspector] public bool selected;
 
     public static NArmy[] narmies;
     private static int armNum;//How many armies are on the field
+    private Vector3 clickPosition;
+
 
     /* In order to properly know when all Nephites have died at the end
      * all the Nephite armies need to be counted at the beginning
@@ -52,30 +53,40 @@ public class NArmy : Army
     {
        if (v == "Spear")
         {
+            clickPosition = GetWorldPositionOnPlane(Input.mousePosition, 0);
+            Vector2 direction = (clickPosition - transform.position).normalized;
+            
             GameObject new_spear = Instantiate(spear, transform.position, Quaternion.identity, transform.parent);
             Physics2D.IgnoreCollision(new_spear.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
-            //Vector3 mouse_point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //Vector2 direction = (mouse_point - transform.position).normalized;
-            //new_spear.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x * spear_speed, direction.y * spear_speed);
-
+            new_spear.transform.LookAt(clickPosition);
+            new_spear.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x * spear_speed, direction.y * spear_speed);
+            
         }
+    }
+    public Vector3 GetWorldPositionOnPlane(Vector3 screenPosition, float z)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(screenPosition);
+        Plane xy = new Plane(Vector3.forward, new Vector3(0, 0, z));
+        float distance;
+        xy.Raycast(ray, out distance);
+        return ray.GetPoint(distance);
     }
 
     /* Change the appearance to make it look like it's selected.
      */
-    private void highlight()
+    private void Highlight()
     {
         gameObject.GetComponent<SpriteRenderer>().color = Color.green;
     }
 
     /* Change the appearance to make it look like it's normal.
     */
-    private void unhighlight()
+    private void Unhighlight()
     {
         gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
     }
 
-    /* Hilights, then makes sure that the navigation scripts know which NArmy is the important one.
+    /* Highlights, then makes sure that the navigation scripts know which NArmy is the important one.
      * 
      * If we run into performance issues this could be optimized to only deselect the old army and not eveyone.
      */
@@ -89,11 +100,11 @@ public class NArmy : Army
                 OnMouseDown();
                 break;
             }
-            narmy.unhighlight();
+            narmy.Unhighlight();
             narmy.selected = false;
         }
         selected = true;
-        highlight();
+        Highlight();
     }
 
     /* When the last army has died bring up the end screen.
