@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 public abstract class Army : MonoBehaviour
@@ -29,6 +30,7 @@ public abstract class Army : MonoBehaviour
         baseDamage      = data.baseDamage;
         flankingDefense = data.flankingDefense;
         maxAttackTimer  = data.maxAttackTimer;
+        nav = GetComponent<AIDestinationSetter>();
 
         Shrink(-soldierNumber);//So that at the start the army is appropriately sized
     }
@@ -105,7 +107,9 @@ public abstract class Army : MonoBehaviour
     {
         totalDamage = baseDamage;
         //otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
-        if (other.transform.position == target.position)
+        Debug.Log(name + "other's position: " + other.transform.position + "target position: " + nav.target.position);
+        Debug.Log(other.transform.position.Equals(nav.target.position));
+        if (other.transform.position.Equals(nav.target.position))
         {
             totalDamage /= flankingDefense;
             Debug.Log(name + totalDamage);
