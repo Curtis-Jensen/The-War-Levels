@@ -3,7 +3,65 @@ using System.Collections.Generic;
 using UnityEngine;
 public class LArmy : Army
 {
-public GameObject lamanite_army;
+    public GameObject lamanite_army;
+    public static NArmy[] nArmies;
+
+    private Transform clickManager;
+    private GameObject nephi;
+
+    /* Get acquainted with Nephi and his children to later be targeted by them.
+     */
+    protected override void Start()
+    {
+        nephi = GameObject.Find("Nephi");
+        GenerateNarmies();
+        base.Start();
+    }
+
+    public void GenerateNarmies()
+    {
+        nArmies = nephi.GetComponentsInChildren<NArmy>();
+    }
+
+    /* Help the selected NArmy attack this.
+     * Also, if the Narmy decides to go somewhere else unselect this LArmy.
+     */
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            clickManager = null;
+        }
+        else if (clickManager != null)
+        {
+            clickManager.position = transform.position;
+        }
+    }
+
+    /* When the player left clicks on a LArmy the navigating NArmy will track this LArmy.
+     * 
+     * Make sure nothing is null,
+     * Find which NArmy is selected,
+     * find it's click manager,
+     * set it as the click manager to be moved.
+     */
+    void OnMouseDown()
+    {
+        foreach (NArmy nArmy in nArmies)
+        {
+            if (nArmy == null)
+            {
+                GenerateNarmies();
+                OnMouseDown();
+                break;
+            }
+            if (nArmy.selected)
+            {
+                clickManager = GameObject.Find(nArmy.name + " Nav").GetComponent<Transform>();
+                break;
+            }
+        }
+    }
 
     /* The Lamanites spawn new Lamanites when they die because they were "innumerable" in
      * the battle, so they are infinite in code.
@@ -14,5 +72,4 @@ public GameObject lamanite_army;
         lamanite.GetComponent<LArmy>().soldierNumber = 10000;
         base.Die();
     }
-
 }

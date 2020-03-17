@@ -12,7 +12,7 @@ public class NArmy : Army
 
     [HideInInspector] public bool selected;
 
-    public static NArmy[] narmies;
+    public static NArmy[] nArmies;
     private static int armNum;//How many armies are on the field
     private Vector3 clickPosition;
 
@@ -29,7 +29,7 @@ public class NArmy : Army
 
     public void GenerateNarmies()
     {
-        narmies = gameObject.transform.parent.GetComponentsInChildren<NArmy>();
+        nArmies = gameObject.transform.parent.GetComponentsInChildren<NArmy>();
     }
 
     /* Checks to see if certain buttons have been pressed.
@@ -92,7 +92,7 @@ public class NArmy : Army
      */
     private void OnMouseDown()
     {
-        foreach (NArmy narmy in narmies) { 
+        foreach (NArmy narmy in nArmies) { 
         
             if(narmy == null)
             {

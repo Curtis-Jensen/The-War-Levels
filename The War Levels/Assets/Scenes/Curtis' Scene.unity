@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 2853545}
   - component: {fileID: 2853544}
   m_Layer: 0
-  m_Name: Nephite Army 2
+  m_Name: Narmy 2
   m_TagString: Nephites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 80981023}
   - component: {fileID: 80981024}
   m_Layer: 0
-  m_Name: Narmy 2
+  m_Name: Narmy 2 Nav
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -905,7 +905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.400146, y: 16.399994}
+  m_AnchoredPosition: {x: -18.400131, y: 16.399963}
   m_SizeDelta: {x: -165.6, y: -55.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395699627
@@ -1011,7 +1011,7 @@ GameObject:
   - component: {fileID: 406009036}
   - component: {fileID: 406009037}
   m_Layer: 0
-  m_Name: Nephites
+  m_Name: Nephi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1671,7 +1671,7 @@ GameObject:
   - component: {fileID: 768218177}
   - component: {fileID: 768218178}
   m_Layer: 0
-  m_Name: Narmy 1
+  m_Name: Narmy 1 Nav
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1721,7 +1721,7 @@ GameObject:
   - component: {fileID: 896383936}
   - component: {fileID: 896383939}
   m_Layer: 0
-  m_Name: Nephite Army
+  m_Name: Narmy 1
   m_TagString: Nephites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1967,7 +1967,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 79.89502, y: 14.76297}
+  m_AnchoredPosition: {x: 79.89502, y: 14.7630005}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &981958583
@@ -2634,7 +2634,7 @@ GameObject:
   - component: {fileID: 1438056899}
   - component: {fileID: 1438056900}
   m_Layer: 0
-  m_Name: Lamanite Army
+  m_Name: LArmy
   m_TagString: Lamanites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3292,4 +3292,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 100
   maxAttackTimer: 0.1
-  flankingDefense: 10
+  flankingDefense: 999999999

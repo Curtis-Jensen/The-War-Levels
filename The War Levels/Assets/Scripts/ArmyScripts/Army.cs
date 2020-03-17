@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Army : MonoBehaviour
 {
     public int soldierNumber;//How many soldiers the army has
-    public Vector3 target;
+    public Transform target;
     public ArmoryDataHolder data;
 
     private int baseDamage;//How much damage is done before flanking and other modifiers are applied.
@@ -17,6 +17,8 @@ public abstract class Army : MonoBehaviour
     private float attackTimer;
     private string myTag;
     private string otherTag;
+    private AIDestinationSetter nav;
+
 
     /* Calls the oposite of shrink to expand the armies to what they need to be.
      * 
@@ -49,10 +51,6 @@ public abstract class Army : MonoBehaviour
         if (IsEnemy(other))
         {
             otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
-            if(other.transform.position == target)
-            {
-
-            }
         }
         if (other.transform.tag == "Projectile" && gameObject.tag == "Lamanites")
         {
@@ -107,9 +105,10 @@ public abstract class Army : MonoBehaviour
     {
         totalDamage = baseDamage;
         //otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
-        if (other.transform.position == target)
+        if (other.transform.position == target.position)
         {
             totalDamage /= flankingDefense;
+            Debug.Log(name + totalDamage);
         }
 
         soldierNumber -= totalDamage;
