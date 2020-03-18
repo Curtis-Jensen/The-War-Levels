@@ -40,7 +40,7 @@ public class NArmy : Army
         {
             if(Input.GetKeyUp("q"))
             {
-                fire_projectile("Spear");
+                Fire_projectile("Spear");
             }
         }
     }
@@ -49,16 +49,16 @@ public class NArmy : Army
      * Make sure collisions with the player don't count,
      * Make the projectile move somewhere.
      */
-    internal void fire_projectile(string v)
+    internal void Fire_projectile(string message)
     {
-       if (v == "Spear")
+       if (message == "Spear")
         {
             clickPosition = GetWorldPositionOnPlane(Input.mousePosition, 0);
             Vector2 direction = (clickPosition - transform.position).normalized;
             
             GameObject new_spear = Instantiate(spear, transform.position, Quaternion.identity, transform.parent);
             Physics2D.IgnoreCollision(new_spear.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
-            new_spear.transform.LookAt(clickPosition);
+            new_spear.transform.LookAt(clickPosition, Vector3.forward);
             new_spear.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x * spear_speed, direction.y * spear_speed);
             
         }
