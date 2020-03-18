@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LamaniteTargeter : MonoBehaviour
 {
-    public Transform myTransform;
+    public Transform armySubject;
 
     static Transform[] possibleTargets;
 
