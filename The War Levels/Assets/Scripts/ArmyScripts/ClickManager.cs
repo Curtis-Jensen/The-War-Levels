@@ -8,6 +8,12 @@ public class ClickManager : MonoBehaviour
 
     private Vector3 clickPosition;
 
+    void Start()
+    {
+        transform.position = armySubject.transform.position;
+        Debug.Log(name + " " + armySubject.transform.position);
+    }
+
     /* When the player clicks this object's location goes there.
      * When this object's location goes there it makes the army follow.
      */

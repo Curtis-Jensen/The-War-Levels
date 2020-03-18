@@ -107,9 +107,9 @@ public abstract class Army : MonoBehaviour
     {
         totalDamage = baseDamage;
         //otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
-        Debug.Log(name + "other's position: " + other.transform.position + "target position: " + nav.target.position);
-        Debug.Log(other.transform.position.Equals(nav.target.position));
-        if (other.transform.position.Equals(nav.target.position))
+        //Debug.Log(name + "other's position: " + other.transform.position + "target position: " + nav.target.position);
+        Debug.Log(other.transform.position.x == nav.target.position.x);
+        if (other.transform.position.x == nav.target.position.x)
         {
             totalDamage /= flankingDefense;
             Debug.Log(name + totalDamage);
