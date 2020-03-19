@@ -11,7 +11,6 @@ public class ClickManager : MonoBehaviour
     void Start()
     {
         transform.position = armySubject.transform.position;
-        Debug.Log(name + " " + armySubject.transform.position);
     }
 
     /* When the player clicks this object's location goes there.
