@@ -63,6 +63,14 @@ public class LArmy : Army
         }
     }
 
+    /* So the armies are more visable during editing.
+     */
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.black;
+        Gizmos.DrawCube(transform.position, Vector3.one);
+    }
+
     /* The Lamanites spawn new Lamanites when they die because they were "innumerable" in
      * the battle, so they are infinite in code.
      */

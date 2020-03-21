@@ -107,6 +107,14 @@ public class NArmy : Army
         Highlight();
     }
 
+    /* So the armies are more visable during edditing.
+    */
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawCube(transform.position, Vector3.one);
+    }
+
     /* When the last army has died bring up the end screen.
      * Restructure the narmies but not somehow after we're dead...
      */
