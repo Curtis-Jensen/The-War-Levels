@@ -87,7 +87,7 @@ public abstract class Army : MonoBehaviour
             attackTimer -= Time.deltaTime;
             if (attackTimer < 0)
             {
-                Battle(other);
+                BattleCalculations(other);
             }
         }
     }
@@ -103,13 +103,10 @@ public abstract class Army : MonoBehaviour
      * 
      * Calling the functions that make the army shrink and die when they have no men.
      */
-    void Battle(Collision2D other)
+    void BattleCalculations(Collision2D other)
     {
         totalDamage = baseDamage;
-        //otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
-        //Debug.Log(name + "other's position: " + other.transform.position + "target position: " + nav.target.position);
-        Debug.Log(other.transform.position.x == nav.target.position.x);
-        if (other.transform.position.x == nav.target.position.x)
+        if ((int)other.transform.position.x == (int)nav.target.position.x)
         {
             totalDamage /= flankingDefense;
             Debug.Log(name + totalDamage);
