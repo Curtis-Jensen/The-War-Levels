@@ -7,7 +7,6 @@ public abstract class Army : MonoBehaviour
 {
     public int soldierNumber;//How many soldiers the army has
     public Transform target;
-    public ArmoryDataHolder data;
 
     private int baseDamage;//How much damage is done before flanking and other modifiers are applied.
     private int flankingDefense;//How much defense is gained from being attacked by an army the army is gocussed on.
@@ -19,6 +18,7 @@ public abstract class Army : MonoBehaviour
     private string myTag;
     private string otherTag;
     private AIDestinationSetter nav;
+    private ArmoryDataHolder data;
 
 
     /* Calls the oposite of shrink to expand the armies to what they need to be.
@@ -27,6 +27,7 @@ public abstract class Army : MonoBehaviour
      */
     protected virtual void Start()
     {
+        data = GameObject.Find("Managers").GetComponent<ArmoryDataHolder>();
         baseDamage      = data.baseDamage;
         flankingDefense = data.flankingDefense;
         maxAttackTimer  = data.maxAttackTimer;
@@ -50,10 +51,8 @@ public abstract class Army : MonoBehaviour
      */
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (IsEnemy(other))
-        {
-            otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
-        }
+        if (IsEnemy(other))  otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
+
         if (other.transform.tag == "Projectile" && gameObject.tag == "Lamanites")
         {
             Damage_unit(totalDamage, 2);
@@ -85,10 +84,7 @@ public abstract class Army : MonoBehaviour
         if (IsEnemy(other))
         {
             attackTimer -= Time.deltaTime;
-            if (attackTimer < 0)
-            {
-                BattleCalculations(other);
-            }
+            if (attackTimer < 0) BattleCalculations(other);
         }
     }
 

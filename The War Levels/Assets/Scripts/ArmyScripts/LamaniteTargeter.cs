@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class LamaniteTargeter : MonoBehaviour
 {
-    public Transform armySubject;
-
     static Transform[] possibleTargets;
 
     /* Gets the manager for the Nephites via the navigation manager to find the enemy.
      */
     void Start()
     {
+        string armySubjectName = name.Substring(4);
+        armySubject = GameObject.Find(armySubjectName).GetComponent<LArmy>().transform;
         FillPossibleTargets();
     }
 

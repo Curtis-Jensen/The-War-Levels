@@ -18,6 +18,12 @@ namespace Pathfinding {
 		public Transform target;
 		IAstarAI ai;
 
+		/* Automaically find the navigation target.
+		 */
+		void Start() {
+			target = GameObject.Find("Nav " + name).transform;
+		}
+
 		void OnEnable () {
 			ai = GetComponent<IAstarAI>();
 			// Update the destination right before searching for a path as well.

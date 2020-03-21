@@ -107,7 +107,7 @@ public class NArmy : Army
         Highlight();
     }
 
-    /* So the armies are more visable during edditing.
+    /* So the armies are more visable during editing.
     */
     void OnDrawGizmos()
     {

@@ -57,7 +57,7 @@ public class LArmy : Army
             }
             if (nArmy.selected)
             {
-                clickManager = GameObject.Find(nArmy.name + " Nav").GetComponent<Transform>();
+                clickManager = GameObject.Find("Nav " + nArmy.name).GetComponent<Transform>();
                 break;
             }
         }

@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class ClickManager : MonoBehaviour
 {
-    public NArmy armySubject;
-
+    private NArmy armySubject;
     private Vector3 clickPosition;
 
+    /* Finding the army subject
+     */
     void Start()
     {
+        string armySubjectName = name.Substring(4);
+        armySubject = GameObject.Find(armySubjectName).GetComponent<NArmy>();
         transform.position = armySubject.transform.position;
     }
 
