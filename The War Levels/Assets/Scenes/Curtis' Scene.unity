@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 2853545}
   - component: {fileID: 2853544}
   m_Layer: 0
-  m_Name: Narmy 2
+  m_Name: Narmy (1)
   m_TagString: Nephites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soldierNumber: 4500
   target: {fileID: 0}
-  data: {fileID: 2084322748}
   tManage: {fileID: 1328357011}
   spear: {fileID: 6391598586334554031, guid: fd7e83942d611f846a95e5f5a9aa80cf, type: 3}
   spear_speed: 100
@@ -429,7 +428,7 @@ GameObject:
   - component: {fileID: 80981023}
   - component: {fileID: 80981024}
   m_Layer: 0
-  m_Name: Narmy 2 Nav
+  m_Name: Nav Narmy (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -461,7 +460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad08a1096b298b34abf57f657281afc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armySubject: {fileID: 2853544}
 --- !u!1 &130342532
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,7 +965,7 @@ GameObject:
   - component: {fileID: 396542237}
   - component: {fileID: 396542238}
   m_Layer: 0
-  m_Name: LArmy 1
+  m_Name: Nav LArmy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -999,7 +997,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4da86f0570b34344b8eb761d678bd32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armySubject: {fileID: 0}
 --- !u!1 &406009035
 GameObject:
   m_ObjectHideFlags: 0
@@ -123866,7 +123863,7 @@ GameObject:
   - component: {fileID: 768218177}
   - component: {fileID: 768218178}
   m_Layer: 0
-  m_Name: Narmy 1 Nav
+  m_Name: Nav Narmy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123898,7 +123895,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad08a1096b298b34abf57f657281afc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armySubject: {fileID: 896383939}
 --- !u!1 &856716152
 GameObject:
   m_ObjectHideFlags: 0
@@ -124030,7 +124026,7 @@ GameObject:
   - component: {fileID: 896383936}
   - component: {fileID: 896383939}
   m_Layer: 0
-  m_Name: Narmy 1
+  m_Name: Narmy
   m_TagString: Nephites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124237,7 +124233,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soldierNumber: 4500
   target: {fileID: 0}
-  data: {fileID: 2084322748}
   tManage: {fileID: 1328357011}
   spear: {fileID: 6391598586334554031, guid: fd7e83942d611f846a95e5f5a9aa80cf, type: 3}
   spear_speed: 100
@@ -125151,7 +125146,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soldierNumber: 10000
   target: {fileID: 0}
-  data: {fileID: 2084322748}
   lamanite_army: {fileID: 1438056892}
 --- !u!1 &1533524738
 GameObject:
