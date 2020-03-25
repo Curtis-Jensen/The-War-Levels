@@ -10,8 +10,6 @@ public class LamaniteTargeter : MonoBehaviour
      */
     void Start()
     {
-        string armySubjectName = name.Substring(4);
-        armySubject = GameObject.Find(armySubjectName).GetComponent<LArmy>().transform;
         FillPossibleTargets();
     }
 
