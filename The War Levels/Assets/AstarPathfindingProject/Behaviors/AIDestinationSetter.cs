@@ -18,9 +18,11 @@ namespace Pathfinding {
 		public Transform target;
 		IAstarAI ai;
 
-		/* Automaically find the navigation target.
+		/* Automaically find the navigation target by looking for the name.
+		 * For instance "Narmy (1)" would look for "Nav Narmy (1)"
 		 */
 		void Start() {
+			Debug.Log(name);
 			target = GameObject.Find("Nav " + name).transform;
 		}
 
