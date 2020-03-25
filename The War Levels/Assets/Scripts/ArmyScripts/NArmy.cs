@@ -22,6 +22,7 @@ public class NArmy : Army
      */
     protected override void Start()
     {
+        //Fire_point_spawner();
         armNum++;
         GenerateNarmies();
         base.Start();
@@ -53,14 +54,17 @@ public class NArmy : Army
     {
        if (message == "Spear")
         {
+            //saves the position of the mouse's click in the world's plane
             clickPosition = GetWorldPositionOnPlane(Input.mousePosition, 0);
+            //creates a line from click position to this objects position
             Vector2 direction = (clickPosition - transform.position).normalized;
-            
+            //instantiates a new spear in the same location as the this object
             GameObject new_spear = Instantiate(spear, transform.position, Quaternion.identity, transform.parent);
+            //new_spear ignores collision 
             Physics2D.IgnoreCollision(new_spear.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
-            new_spear.transform.LookAt(clickPosition, Vector3.forward);
+            new_spear.transform.right = direction;
             new_spear.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x * spear_speed, direction.y * spear_speed);
-            
+
         }
     }
     public Vector3 GetWorldPositionOnPlane(Vector3 screenPosition, float z)
