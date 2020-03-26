@@ -18,8 +18,8 @@ public abstract class Army : MonoBehaviour
     private string myTag;
     private string otherTag;
     private AIDestinationSetter nav;
-    private ArmoryDataHolder data;
 
+    protected ArmoryDataHolder data;
 
     /* Calls the oposite of shrink to expand the armies to what they need to be.
      * 

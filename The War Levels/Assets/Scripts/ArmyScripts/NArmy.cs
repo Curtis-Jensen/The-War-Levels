@@ -5,20 +5,19 @@ using UnityEngine;
 
 public class NArmy : Army
 {
-    public TextManager tManage;
     public GameObject spear;
     public float spear_speed = 100f;
 
-
     [HideInInspector] public bool selected;
-
-    public static NArmy[] nArmies;
     private static int armNum;//How many armies are on the field
     private Vector3 clickPosition;
-
+    public static NArmy[] nArmies;
+    private TextManager tManage;
 
     /* In order to properly know when all Nephites have died at the end
      * all the Nephite armies need to be counted at the beginning
+     * 
+     * Gets NArmy specific data from Managers
      */
     protected override void Start()
     {
@@ -26,6 +25,7 @@ public class NArmy : Army
         armNum++;
         GenerateNarmies();
         base.Start();
+        tManage = data.tManage;
     }
 
     public void GenerateNarmies()

@@ -9,4 +9,5 @@ public class ArmoryDataHolder : MonoBehaviour
     public int baseDamage;
     public float maxAttackTimer;
     public int flankingDefense;//How much defense is gained from being attacked by an army the army is gocussed on.
+    public TextManager tManage;
 }

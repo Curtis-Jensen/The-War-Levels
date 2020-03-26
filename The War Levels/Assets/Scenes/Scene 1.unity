@@ -232,7 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad08a1096b298b34abf57f657281afc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armySubject: {fileID: 0}
 --- !u!1001 &128277602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -244,6 +243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Narmy (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675456694259922387, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
@@ -574,7 +578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4da86f0570b34344b8eb761d678bd32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armySubject: {fileID: 0}
 --- !u!1 &368320788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,7 +1194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4da86f0570b34344b8eb761d678bd32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armySubject: {fileID: 0}
 --- !u!1001 &530876978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1203,6 +1205,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Narmy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675456694259922387, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
@@ -1615,7 +1622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad08a1096b298b34abf57f657281afc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armySubject: {fileID: 0}
 --- !u!4 &896383932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
@@ -1724,7 +1730,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad08a1096b298b34abf57f657281afc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armySubject: {fileID: 0}
 --- !u!1 &981958581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,7 +2116,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soldierNumber: 10000
   target: {fileID: 0}
-  data: {fileID: 0}
   lamanite_army: {fileID: 1053051737}
 --- !u!212 &1053051745
 SpriteRenderer:
@@ -2404,7 +2408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad08a1096b298b34abf57f657281afc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armySubject: {fileID: 0}
 --- !u!1 &1302613697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,6 +2693,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Narmy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7675456694259922387, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2971,7 +2979,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soldierNumber: 10000
   target: {fileID: 0}
-  data: {fileID: 0}
   lamanite_army: {fileID: 1438056892}
 --- !u!1 &1533524738
 GameObject:
@@ -3107,6 +3114,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Narmy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675456694259922387, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
@@ -3332,7 +3344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad08a1096b298b34abf57f657281afc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armySubject: {fileID: 0}
 --- !u!1 &1750056364
 GameObject:
   m_ObjectHideFlags: 0
@@ -3516,25 +3527,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '"And they did not come unto Jesus with broken hearts and contrite spirits,
-    but they did curse God, and wish to die.  Nevertheless they would struggle with
-    the sword for their lives.
-
-
-    And it came to pass that my sorrow did return unto me again, and I saw that the
-    day of grace was passed with them, both temporally and spiritually; for I saw
-    thousands of them hewn down in open rebellion against their God, and heaped up
-    as dung upon the face of the land."
-
-    (Moroni 2:14,15)
-
-
-    The battle shown can be read in Mormon 6.
-
-
-    And we testify that the record of the Book of Mormon is true, for we have read
-    it, prayed for a witness of its truth, and recieved it by the power of the Holy
-    Ghost.'
+  m_Text: "The Nephites (who are represented by yellow groups of soldiers), have gathered
+    together for their last struggle against the Lamanites (who are represented by
+    black groups of soldiers).  You are Mormon, The Chief Captain of the Nephites.
+    \ Though your people have cursed The Lord and are exceedingly wicked they look
+    to you as though you can deliver them from their afflictions.\r\n\r\nLeft click
+    a Nephite army to command them.\r\nRight click anywhere to direct them.\r\nLeft
+    click a Lamanite army to have your army target them."
 --- !u!222 &1901093717
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3586,7 +3585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad08a1096b298b34abf57f657281afc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armySubject: {fileID: 0}
 --- !u!1 &1976394241
 GameObject:
   m_ObjectHideFlags: 0
@@ -3709,6 +3707,7 @@ MonoBehaviour:
   baseDamage: 100
   maxAttackTimer: 0.01
   flankingDefense: 10
+  tManage: {fileID: 1328357011}
 --- !u!4 &2088417709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
@@ -3726,6 +3725,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Narmy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675456694259922387, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
