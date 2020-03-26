@@ -7,7 +7,9 @@ public class ClickManager : MonoBehaviour
     private NArmy armySubject;
     private Vector3 clickPosition;
 
-    /* Finding the army subject
+    /* Finding the army subject by looking for it's name.
+     * 
+     * For instance, "Nav Narmy (1)" would look for "Narmy (1)".
      */
     void Start()
     {
