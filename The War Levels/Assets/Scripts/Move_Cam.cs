@@ -4,22 +4,40 @@ using UnityEngine;
 
 public class Move_Cam : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float moveSpeed = 5f;
+    public float moveSpeed;
+    public float zoomSpeed;
 
-    public Rigidbody2D rb;
+    private float zoomDirection;
+    private Rigidbody rb;
+    private Vector3 zPlaneDirection;
+    private Vector3 forward;
 
-    Vector2 movement;
-
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        rb = GetComponent<Rigidbody>();
+        forward = gameObject.transform.forward;
     }
 
+    /* Checks if there is a direction the camera should move on the Z plane.
+     * 
+     * Checks if  the camera should move zoom in or out.
+     */
+    void Update()
+    {
+        zPlaneDirection.x = Input.GetAxisRaw("Horizontal");
+        zPlaneDirection.y = Input.GetAxisRaw("Vertical");
+
+        zoomDirection = Input.GetAxisRaw("Mouse ScrollWheel");
+        Debug.Log(zoomDirection);
+    }
+
+    /* Applies any Z plane movement that needs to occur, then any zooming.
+     * 
+     * Zooms by adding 
+     */
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + zPlaneDirection * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + (zoomDirection * forward) * zoomSpeed * Time.fixedDeltaTime);
     }
 }

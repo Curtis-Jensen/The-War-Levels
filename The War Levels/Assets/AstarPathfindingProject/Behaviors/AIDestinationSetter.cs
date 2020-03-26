@@ -22,7 +22,6 @@ namespace Pathfinding {
 		 * For instance "Narmy (1)" would look for "Nav Narmy (1)"
 		 */
 		void Start() {
-			Debug.Log(name);
 			target = GameObject.Find("Nav " + name).transform;
 		}
 

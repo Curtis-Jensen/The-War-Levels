@@ -6,7 +6,6 @@ using UnityEngine;
 public abstract class Army : MonoBehaviour
 {
     public int soldierNumber;//How many soldiers the army has
-    public Transform target;
 
     private int baseDamage;//How much damage is done before flanking and other modifiers are applied.
     private int flankingDefense;//How much defense is gained from being attacked by an army the army is gocussed on.
