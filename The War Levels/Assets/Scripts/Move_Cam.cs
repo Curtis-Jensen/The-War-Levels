@@ -28,16 +28,13 @@ public class Move_Cam : MonoBehaviour
         zPlaneDirection.y = Input.GetAxisRaw("Vertical");
 
         zoomDirection = Input.GetAxisRaw("Mouse ScrollWheel");
-        Debug.Log(zoomDirection);
     }
 
     /* Applies any Z plane movement that needs to occur, then any zooming.
-     * 
-     * Zooms by adding 
      */
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + zPlaneDirection * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + zPlaneDirection           * moveSpeed * Time.fixedDeltaTime);
         rb.MovePosition(rb.position + (zoomDirection * forward) * zoomSpeed * Time.fixedDeltaTime);
     }
 }
