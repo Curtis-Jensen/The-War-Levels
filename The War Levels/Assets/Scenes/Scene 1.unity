@@ -249,6 +249,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7675456694259922387, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -303,6 +308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048198061788570024, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5fb335b96c5e994eaf2490af37b98b7, type: 3}
@@ -719,7 +729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 406009036}
   - component: {fileID: 406009037}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Nephi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1211,6 +1221,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7675456694259922387, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1265,6 +1280,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048198061788570024, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5fb335b96c5e994eaf2490af37b98b7, type: 3}
@@ -1913,8 +1933,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b259fb810d2b4a4cb19de91e75de10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
-  zoomSpeed: 1000
+  moveSpeed: 30
+  zoomSpeed: 3000
 --- !u!54 &1053021081
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2510,27 +2530,11 @@ MonoBehaviour:
   textHolder: {fileID: 1901093714}
   aICTPbutton: {fileID: 435984096}
   scrollbar: {fileID: 1420634090}
-  outroText: "\"O ye fair ones, how could ye have departed from the ways of the Lord!
-    O ye fair ones, how could ye have rejected that Jesus, who stood with open arms
-    to receive you!\r\n\r\nBehold, if ye had not done this, ye would not have fallen.
-    But behold, ye are fallen, and I mourn your loss.\" (Mormon 6: 17-18)\n\n\"My
-    son, be faithful in Christ; and may not the things which I have written grieve
-    thee, to weigh thee down unto death; but may Christ lift thee up, and may his
-    sufferings and death, and the showing his body unto our fathers, and his mercy
-    and long-suffering, and the hope of his glory and of eternal life, rest in your
-    mind forever.\r \n\r\n And may the grace of God the Father, whose throne is high
-    in the heavens, and our Lord Jesus Christ, who sitteth on the right hand of his
-    power, until all things shall become subject unto him, be, and abide with you
-    forever. Amen.\" (Moroni 9: 25-26)\n\n\"Behold, I would exhort you that when ye
-    shall read these things, if it be wisdom in God that ye should read them, that
-    ye would remember how merciful the Lord hath been unto the children of men, from
-    the creation of Adam even down until the time that ye shall receive these things,
-    and ponder it in your hearts.\r\n\r\n And when ye shall receive these things,
-    I would exhort you that ye would ask God, the Eternal Father, in the name of Christ,
-    if these things are not true; and if ye shall ask with a sincere heart, with real
-    intent, having faith in Christ, he will manifest the truth of it unto you, by
-    the power of the Holy Ghost.\r\n\r\n And by the power of the Holy Ghost ye may
-    know the truth of all things.\" (Moroni 10: 3-5)"
+  outroText: "The Nephites were all destroyed, all save those who fled into the southern
+    wilderness or deserted unto the Lamanites, but Mormon's son Moroni buried their
+    record, The Book of Mormon, to be found over 1600 years later.\r\n\r\nThe Lamanites
+    continued shedding one another's blood when the Nephites were destroyed, and they
+    are among the ancestors of the Native Americans."
 --- !u!4 &1328357012
 Transform:
   m_ObjectHideFlags: 0
@@ -2688,6 +2692,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7675456694259922387, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2742,6 +2751,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048198061788570024, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5fb335b96c5e994eaf2490af37b98b7, type: 3}
@@ -3109,6 +3123,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7675456694259922387, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3163,6 +3182,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048198061788570024, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5fb335b96c5e994eaf2490af37b98b7, type: 3}
@@ -3720,6 +3744,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7675456694259922387, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3774,6 +3803,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048198061788570024, guid: a5fb335b96c5e994eaf2490af37b98b7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922346, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}

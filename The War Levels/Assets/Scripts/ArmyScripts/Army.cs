@@ -50,8 +50,6 @@ public abstract class Army : MonoBehaviour
      */
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (IsEnemy(other))  otherArmysSoldiers = other.transform.GetComponent<Army>().soldierNumber;
-
         if (other.transform.tag == "Projectile" && gameObject.tag == "Lamanites")
         {
             Damage_unit(totalDamage, 2);
@@ -102,19 +100,14 @@ public abstract class Army : MonoBehaviour
     {
         totalDamage = baseDamage;
         if ((int)other.transform.position.x == (int)nav.target.position.x)
-        {
             totalDamage /= flankingDefense;
-            Debug.Log(name + totalDamage);
-        }
 
         soldierNumber -= totalDamage;
         Shrink(totalDamage);
 
         attackTimer = maxAttackTimer;
         if (soldierNumber < 1)
-        {
             Die();
-        }
     }
 
     /* Changes the size of the army (typically when an army takes damage)
@@ -132,8 +125,7 @@ public abstract class Army : MonoBehaviour
 
     /* Destroys self.
     */
-    protected virtual void Die()
-    {
+    protected virtual void Die(){
         Destroy(gameObject);
     }
 }

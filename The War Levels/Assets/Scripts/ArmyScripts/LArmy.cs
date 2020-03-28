@@ -1,13 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+#pragma warning disable CS0252 // Possible unintended reference comparison; left hand side needs cast
 public class LArmy : Army
 {
     public GameObject lamanite_army;
-    public static NArmy[] nArmies;
+    public static NArmy[] narmies;
 
-    private Transform clickManager;
+    private ArrayList narmyTargets = new ArrayList();
     private GameObject nephi;
+
+    /* So the armies are more visable during editing.
+    */
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.black;
+        Gizmos.DrawCube(transform.position, Vector3.one);
+    }
 
     /* Get acquainted with Nephi and his children to later be targeted by them.
      */
@@ -20,55 +30,60 @@ public class LArmy : Army
 
     public void GenerateNarmies()
     {
-        nArmies = nephi.GetComponentsInChildren<NArmy>();
+        narmies = nephi.GetComponentsInChildren<NArmy>();
     }
 
-    /* Help the selected NArmy attack this.
-     * Also, if the Narmy decides to go somewhere else unselect this LArmy.
+    /* Manage navigation for each Narmy targeting th
+     * 
+     * If the player right clicks and the Narmy targeting is selected
+     * set clickManager to null.
+     * 
+     * Help the selected NArmy attack this by continually changing the position of
+     * the clickmanager.
      */
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        for (int i = 0; i < narmyTargets.Count; i++)
         {
-            clickManager = null;
+            Debug.Log(Input.GetMouseButtonDown(1) && narmyTargets[i] == FindSelectedNArmy());
+            if (Input.GetMouseButtonDown(1) && narmyTargets[i] == FindSelectedNArmy())
+            {
+                narmyTargets.RemoveAt(i);
+                continue;
+            }
+            narmyTargets[i] = transform.position;
         }
-        else if (clickManager != null)
-        {
-            clickManager.position = transform.position;
-        }
+
+        //if (Input.GetMouseButtonDown(1) && narmyTargets[0] == FindSelectedNArmy())
+        //    narmyTargets[0] = null;
+        
+        //else if (narmyTargets[0] != null)
+        //    narmyTargets[0] = transform.position;
     }
 
     /* When the player left clicks on a LArmy the navigating NArmy will track this LArmy.
      * 
-     * Make sure nothing is null,
-     * Find which NArmy is selected,
-     * find it's click manager,
-     * set it as the click manager to be moved.
+     * Adds the narmy's targeting to the list of enemies.
      */
     void OnMouseDown()
     {
-        foreach (NArmy nArmy in nArmies)
-        {
-            if (nArmy == null)
-            {
-                GenerateNarmies();
-                OnMouseDown();
-                break;
-            }
-            if (nArmy.selected)
-            {
-                clickManager = GameObject.Find("Nav " + nArmy.name).GetComponent<Transform>();
-                break;
-            }
-        }
+        Debug.Log("Added: " + narmyTargets.Add(FindSelectedNArmy()));
     }
 
-    /* So the armies are more visable during editing.
-     */
-    void OnDrawGizmos()
+    Transform FindSelectedNArmy()
     {
-        Gizmos.color = Color.black;
-        Gizmos.DrawCube(transform.position, Vector3.one);
+        foreach (NArmy narmy in narmies)
+        {
+            if (narmy == null)
+            {
+                GenerateNarmies();
+                FindSelectedNArmy();
+                break;
+            }
+            if (narmy.selected)
+                return GameObject.Find("Nav " + narmy.name).GetComponent<Transform>();
+        }
+        return null;
     }
 
     /* The Lamanites spawn new Lamanites when they die because they were "innumerable" in

@@ -67,6 +67,9 @@ public class NArmy : Army
 
         }
     }
+
+    /* Assists in clicking when isometric.
+     */
     public Vector3 GetWorldPositionOnPlane(Vector3 screenPosition, float z)
     {
         Ray ray = Camera.main.ScreenPointToRay(screenPosition);
