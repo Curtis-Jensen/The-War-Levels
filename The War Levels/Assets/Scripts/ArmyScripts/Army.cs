@@ -16,7 +16,7 @@ public abstract class Army : MonoBehaviour
     private float attackTimer;
     private string myTag;
     private string otherTag;
-    private AIDestinationSetter nav;
+    private AIPath nav;
 
     protected ArmoryDataHolder data;
 
@@ -30,7 +30,7 @@ public abstract class Army : MonoBehaviour
         baseDamage      = data.baseDamage;
         flankingDefense = data.flankingDefense;
         maxAttackTimer  = data.maxAttackTimer;
-        nav = GetComponent<AIDestinationSetter>();
+        nav = GetComponent<AIPath>();
 
         Shrink(-soldierNumber);//So that at the start the army is appropriately sized
     }

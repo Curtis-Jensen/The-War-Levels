@@ -8,7 +8,7 @@ public class LArmy : Army
     public GameObject lamanite_army;
     public static NArmy[] narmies;
 
-    private ArrayList narmyTargets = new ArrayList();
+    private List<Transform> narmyTargets = new List<Transform>();
     private GameObject nephi;
 
     /* So the armies are more visable during editing.
@@ -45,13 +45,13 @@ public class LArmy : Army
     {
         for (int i = 0; i < narmyTargets.Count; i++)
         {
-            Debug.Log(Input.GetMouseButtonDown(1) && narmyTargets[i] == FindSelectedNArmy());
-            if (Input.GetMouseButtonDown(1) && narmyTargets[i] == FindSelectedNArmy())
+            if (narmyTargets[i] == null || 
+                    Input.GetMouseButtonDown(1) && narmyTargets[i] == FindSelectedNArmy())
             {
                 narmyTargets.RemoveAt(i);
                 continue;
             }
-            narmyTargets[i] = transform.position;
+            narmyTargets[i].position = transform.position;
         }
 
         //if (Input.GetMouseButtonDown(1) && narmyTargets[0] == FindSelectedNArmy())
@@ -67,7 +67,7 @@ public class LArmy : Army
      */
     void OnMouseDown()
     {
-        Debug.Log("Added: " + narmyTargets.Add(FindSelectedNArmy()));
+        narmyTargets.Add(FindSelectedNArmy());
     }
 
     Transform FindSelectedNArmy()
