@@ -479,8 +479,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 243.24997, y: -182.45}
-  m_SizeDelta: {x: 215.5, y: 52.5}
+  m_AnchoredPosition: {x: 225.6, y: -182.45}
+  m_SizeDelta: {x: 250.8, y: 52.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &373071291
 MonoBehaviour:
@@ -1139,7 +1139,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TO WAR!!!
+  m_text: '"And It Came to Pass..."'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1209,12 +1209,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -171.77908, w: 0}
   m_textInfo:
     textComponent: {fileID: 558596041}
-    characterCount: 9
+    characterCount: 24
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 4
+    wordCount: 5
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
