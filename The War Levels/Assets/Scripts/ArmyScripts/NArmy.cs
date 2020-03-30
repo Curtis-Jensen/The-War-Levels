@@ -144,6 +144,7 @@ public class NArmy : Army
         armNum--;
         if (armNum < 1)
         {
+            Timer.timerControler.Finish();
             tManage.MormonsLament();
         }
 

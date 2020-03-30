@@ -5,12 +5,26 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    public static Timer timerControler;
 
     public Text timerText;
     private float startTime;
     private bool finished = false;
     private float t;
     //public ScoreManager scoreManager = new ScoreManager();
+
+    void Awake()
+    {
+        if(timerControler == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            timerControler = this;
+        }
+        else if(timerControler != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
