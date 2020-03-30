@@ -497,7 +497,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: c34d9a9c18f07754b856f6c691583a76, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1087,20 +1087,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 368320789}
-        m_MethodName: Pause
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1328357011}
-        m_MethodName: CloseText
-        m_Mode: 1
+        m_MethodName: TextToggle
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1436,7 +1425,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: c34d9a9c18f07754b856f6c691583a76, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2012,6 +2001,7 @@ MonoBehaviour:
   panel: {fileID: 395699625}
   textHolder: {fileID: 1901093714}
   aICTPbutton: {fileID: 435984096}
+  pauser: {fileID: 368320789}
   scrollbar: {fileID: 1420634090}
   outroText: "\"O ye fair ones, how could ye have departed from the ways of the Lord!
     O ye fair ones, how could ye have rejected that Jesus, who stood with open arms
@@ -2762,7 +2752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 100
   flankingDefense: 10
-  maxAttackTimer: 0.1
+  maxAttackTimer: 0.01
   armySpeed: 3
   tManage: {fileID: 0}
   navigators: []

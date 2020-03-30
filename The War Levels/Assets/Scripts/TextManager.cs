@@ -8,33 +8,20 @@ public class TextManager : MonoBehaviour
     public GameObject panel;
     public GameObject textHolder;
     public GameObject aICTPbutton;
+    public PauseManager pauser;
     public Scrollbar scrollbar;
     [TextArea(3, 10)]
     public string outroText;
 
-    /* Just calls TextToggle() for closing.  Important code occurs in TextToggle().
-     * But it does reset the position of the scrollbar so it's not on the bottom next time it opens.
-     */
-    public void CloseText()//Closes text
-    {
-        scrollbar.value = 1f;
-        TextToggle(false);
-    }
-
-    /* Opposite of above.
-     */
-    public void OpenText()//Opens text
-    {
-        TextToggle(true);
-    }
-
     /* Toggles the activity of the text objects,
      * resets the position of the scrollbar
      */
-    void TextToggle(bool opening)//Where the actual code of close and open text take place
+    public void TextToggle(bool opening)
     {
+        scrollbar.value = 1f;
         panel.SetActive(opening);
         aICTPbutton.SetActive(opening);
+        pauser.Pause();
     }
 
     public void MormonsLament()//Activates the final message
