@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: aa9067f7003cf7f46b0028d12a4e92e0
+labels:
+- Blurry
+- Character
+- Edges
+- Hard
+- Mesh
+- Perfect
+- Pixel
+- Sharp
+- Text
+- blurry
+- character
+- edges
+- mesh
+- perfect
+- pixel
+- pro
+- sharp
+- text
+timeCreated: 1485082544
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: d9bc854adff2d684e96d3040f1da6a41
+labels:
+- Blurry
+- Character
+- Edges
+- Hard
+- Mesh
+- Perfect
+- Pixel
+- Sharp
+- Text
+- blurry
+- character
+- edges
+- mesh
+- perfect
+- pixel
+- pro
+- sharp
+- text
+timeCreated: 1485071507
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

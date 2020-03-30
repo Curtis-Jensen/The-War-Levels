@@ -1,0 +1,10 @@
+Thanks for downloading Sharp Text Mesh.
+
+Visit scene called Demo and hit play. Now you see 3 texts. Blurry text and Text with hard edges have set text propeties from the inspector.
+
+Sharp text's propeties are controlled by a script "Sharptext". The script adjusts the text´s propeties to match Resolution and Ortographic camera size to achieve sharp looking text.
+
+You can set the size of your text in units intead of pixels. This is handy when you are using texts as a part of gameplay.
+
+The script can be atached to any gameobject with Text Mesh component.
+
