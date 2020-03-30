@@ -769,10 +769,10 @@ RectTransform:
   m_Father: {fileID: 1155628397}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.400131, y: 16.399963}
-  m_SizeDelta: {x: -165.6, y: -55.6}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -18.400146, y: 16.399963}
+  m_SizeDelta: {x: 898.4, y: 368.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395699627
 MonoBehaviour:
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 0.98982173, b: 0.1462264, a: 0.392}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1504,8 +1504,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0009613, y: 0.0018629}
-  m_SizeDelta: {x: 857.01, y: 368.36}
+  m_AnchoredPosition: {x: -0.0006218, y: 0.0018629}
+  m_SizeDelta: {x: 611.33, y: 368.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &619413026
 MonoBehaviour:
@@ -1939,7 +1939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.94183296, b: 0.9372549, a: 0.6509804}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6509804}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1948,14 +1948,14 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
     m_MaxSize: 44
     m_Alignment: 6
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: New Text
 --- !u!222 &981958584
@@ -2810,9 +2810,9 @@ RectTransform:
   m_Father: {fileID: 619413025}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 395, y: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 89, y: 0}
   m_SizeDelta: {x: 20, y: 368.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1420634090
@@ -2835,10 +2835,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor: {r: 0.81960785, g: 0.7254902, b: 0.14509805, a: 1}
+    m_HighlightedColor: {r: 0.8207547, g: 0.72544277, b: 0.14324492, a: 1}
+    m_PressedColor: {r: 0.81960785, g: 0.7254902, b: 0.14509805, a: 1}
+    m_DisabledColor: {r: 0.81960785, g: 0.7254902, b: 0.14509805, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2855,7 +2855,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1976394242}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.46563014
+  m_Size: 0.30393532
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2873,7 +2873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.26415092, g: 0.23303834, b: 0.13082945, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3736,10 +3736,10 @@ RectTransform:
   m_Father: {fileID: 1420634089}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -408.47833, y: -211.37}
-  m_SizeDelta: {x: 754.3, y: 791.1}
+  m_AnchoredPosition: {x: -391, y: -421.85025}
+  m_SizeDelta: {x: 609.1, y: 1212.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1901093716
 MonoBehaviour:
@@ -3765,20 +3765,20 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 300
+    m_MaxSize: 42
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "The Nephites (who are represented by yellow groups of soldiers), have gathered
     together for their last struggle against the Lamanites (who are represented by
     black groups of soldiers).  You are Mormon, The Chief Captain of the Nephites.
     \ Though your people have cursed The Lord and are exceedingly wicked they look
-    to you as though you can deliver them from their afflictions.\r\n\r\nLeft click
-    - Command Nephite army or Target Lamanite army\n\nRight click - Move Nephite army\n\nMouse
-    Scroll - Zoom in or out\n\nWASD or Arrow Keys - Move camera\n\nQ - Throw spear"
+    to you as though you can deliver them from their afflictions.\r\n\r\nLeft Click
+    - Command Nephite Army or Target Lamanite Army\n\nRight Click - Move Nephite Army\n\nMouse
+    Scroll - Zoom In or Out\n\nWASD or Arrow Keys - Move Camera\n\nQ - Throw Spear"
 --- !u!222 &1901093717
 CanvasRenderer:
   m_ObjectHideFlags: 0

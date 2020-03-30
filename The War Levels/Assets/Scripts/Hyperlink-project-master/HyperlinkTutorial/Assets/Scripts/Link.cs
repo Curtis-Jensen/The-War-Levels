@@ -8,11 +8,11 @@ public class Link : MonoBehaviour
 	public void OpenBOMPage()
 	{
 #if !UNITY_EDITOR
-		openWindow("https://www.churchofjesuschrist.org/study/scriptures/bofm/title-page?lang=eng");
+		openWindow("https://www.churchofjesuschrist.org/study/scriptures/bofm/introduction?lang=eng");
 #endif
-    }
+	}
 
-    [DllImport("__Internal")]
+	[DllImport("__Internal")]
 	private static extern void openWindow(string url);
 
 }
