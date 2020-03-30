@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6015466038054880971}
   - component: {fileID: 95340754013986830}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HeadSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7675456694259922344}
   - component: {fileID: 7675456694259922345}
   - component: {fileID: 7675456694259922346}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Narmy 1
   m_TagString: Nephites
   m_Icon: {fileID: 0}
@@ -303,9 +303,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soldierNumber: 4500
-  target: {fileID: 0}
-  data: {fileID: 0}
-  tManage: {fileID: 0}
   spear: {fileID: 6391598586334554031, guid: fd7e83942d611f846a95e5f5a9aa80cf, type: 3}
   spear_speed: 100
   selected: 0

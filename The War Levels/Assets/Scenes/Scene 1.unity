@@ -274,7 +274,7 @@ PrefabInstance:
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 39.2
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
@@ -1332,12 +1332,12 @@ PrefabInstance:
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.02
+      value: -19.92
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.11
+      value: 38.6
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
@@ -1416,7 +1416,7 @@ PrefabInstance:
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
@@ -2122,13 +2122,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053021076}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 16.44, z: -58.4}
+  m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: -11.88, y: 30.24001, z: -22.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
 --- !u!114 &1053021080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2190,7 +2190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053051737}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 22.4, y: 2.3, z: 0}
+  m_LocalPosition: {x: 31.44, y: -12.8, z: 0}
   m_LocalScale: {x: 0.00050000026, y: 0.00050000026, z: 1}
   m_Children: []
   m_Father: {fileID: 758150784}
@@ -2855,7 +2855,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1976394242}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.30393532
+  m_Size: 0.30393535
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2920,12 +2920,12 @@ PrefabInstance:
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.75
+      value: -13.71
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 37.95
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
@@ -3058,7 +3058,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438056892}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 2.4, y: -4.1, z: 0}
+  m_LocalPosition: {x: 11.64, y: -13.86, z: 0}
   m_LocalScale: {x: 0.00050000026, y: 0.00050000026, z: 1}
   m_Children: []
   m_Father: {fileID: 758150784}
@@ -3368,7 +3368,7 @@ PrefabInstance:
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.97
+      value: 37.8
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
@@ -3999,7 +3999,7 @@ PrefabInstance:
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.43
+      value: 37.1
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
