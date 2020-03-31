@@ -32,7 +32,6 @@ public class NArmy : Army
      */
     protected override void Start()
     {
-        //Fire_point_spawner();
         armNum++;
         GenerateNarmies();
 
@@ -137,16 +136,12 @@ public class NArmy : Army
     }
 
     /* When the last army has died bring up the end screen.
-     * Restructure the narmies but not somehow after we're dead...
      */
     protected override void Die()
     {
         armNum--;
-        if (armNum < 1)
-        {
-            Timer.timerControler.Finish();
-            tManage.MormonsLament();
-        }
+        if (armNum < 1) tManage.MormonsLament();
+        Destroy(flagSprite.gameObject);
 
         base.Die();
     }

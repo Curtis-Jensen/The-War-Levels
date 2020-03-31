@@ -2754,5 +2754,5 @@ MonoBehaviour:
   flankingDefense: 10
   maxAttackTimer: 0.01
   armySpeed: 3
-  tManage: {fileID: 0}
+  tManage: {fileID: 1328357011}
   navigators: []
