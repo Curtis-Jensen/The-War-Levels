@@ -1139,7 +1139,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"And It Came to Pass..."'
+  m_text: And It Came to Pass...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1209,7 +1209,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -171.77908, w: 0}
   m_textInfo:
     textComponent: {fileID: 558596041}
-    characterCount: 24
+    characterCount: 22
     spriteCount: 0
     spaceCount: 4
     wordCount: 5
@@ -1367,7 +1367,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Story Game '
+  m_text: The Nephites' End
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1437,10 +1437,10 @@ MonoBehaviour:
   m_margin: {x: 4.2351837, y: -1.2878304, z: 1.8547512, w: -0.7792282}
   m_textInfo:
     textComponent: {fileID: 585626522}
-    characterCount: 11
+    characterCount: 17
     spriteCount: 0
     spaceCount: 2
-    wordCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -3540,7 +3540,7 @@ GameObject:
   - component: {fileID: 2098945623}
   - component: {fileID: 2098945622}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3583,18 +3583,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\"The Nephites were all destroyed, all save those who fled into the southern
-    wilderness or deserted unto the Lamanites, but Mormon's son Moroni buried their
-    record, The Book of Mormon, to be found over 1600 years later.\r\n\r\nThe Lamanites
-    continued shedding one annother's blood when the Nephites were destroyed, and
-    they are among the ancestors of the Native Americans.\"\n\n\"The Nephites (who
-    are represented by yellow groups of soldiers), have gathered together for their
-    last struggle against the Lamanites (who are represented by black groups of soldiers).
-    \ You are Mormon, The Chief Captain of the Nephites.  Though your people have
-    cursed The Lord and are exceedingly wicked they look to you as though you can
-    deliver them from their afflictions.\n\nLeft click a Nephite army to command them.\r\nRight
-    click anywhere to direct them.\r\nLeft click a Lamanite army to have your army
-    target them.\""
+  m_text: "The Nephites (who are represented by yellow groups of soldiers), have gathered
+    together for their last struggle against the Lamanites (who are represented by
+    black groups of soldiers).  \n\nYou are Mormon, The Chief Captain of the Nephites.
+    \ Though your people have cursed The Lord and are exceedingly wicked they look
+    to you as though you can deliver them from their afflictions."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -3663,12 +3656,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 11.504801, z: 0, w: 1.2609525}
   m_textInfo:
     textComponent: {fileID: 2098945622}
-    characterCount: 889
+    characterCount: 378
     spriteCount: 0
-    spaceCount: 149
-    wordCount: 145
+    spaceCount: 64
+    wordCount: 61
     linkCount: 0
-    lineCount: 20
+    lineCount: 9
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
