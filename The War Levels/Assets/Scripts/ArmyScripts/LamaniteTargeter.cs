@@ -8,8 +8,7 @@ public class LamaniteTargeter : MonoBehaviour
 
     /* Gets the manager for the Nephites via the navigation manager to find the enemy.
      */
-    void Start()
-    {
+    void Start(){
         FillPossibleTargets();
     }
 
@@ -20,10 +19,7 @@ public class LamaniteTargeter : MonoBehaviour
     {
         foreach(Transform transform in possibleTargets)
         {
-            if(transform == null)
-            {
-                FillPossibleTargets();
-            }
+            if (transform == null)  FillPossibleTargets();
         }
         transform.position = possibleTargets[DetermineShortestDistance()].position;
     }
@@ -52,10 +48,7 @@ public class LamaniteTargeter : MonoBehaviour
                 }
             }
         }
-        else if (possibleTargets.Length > 1)
-        {
-            theClosestIndex = 1;
-        }
+        else if (possibleTargets.Length > 1)  theClosestIndex = 1;
 
         return theClosestIndex;
     }
