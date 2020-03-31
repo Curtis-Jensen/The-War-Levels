@@ -114,12 +114,29 @@ public class NArmy : Army
      */
     private void OnMouseDown()
     {
-        foreach (NArmy narmy in nArmies) 
-        { 
-            if(narmy == null)
+        UnselectAll();
+        SelectSelf();
+        Highlight();
+    }
+
+    /* Marks the narmy as the one being commanded.
+     */
+    public void SelectSelf()
+    {
+        flagSprite.color = new Color(1f, 1f, 1f, 1f);
+        selected = true;
+    }
+
+    /* "At ease Narmies!!"
+     */
+    public void UnselectAll()
+    {
+        foreach (NArmy narmy in nArmies)
+        {
+            if (narmy == null)
             {
                 GenerateNarmies();
-                OnMouseDown();
+                UnselectAll();
                 break;
             }
             if (narmy.selected)
@@ -130,9 +147,6 @@ public class NArmy : Army
                 break;
             }
         }
-        flagSprite.color = new Color(1f, 1f, 1f, 1f);
-        selected = true;
-        Highlight();
     }
 
     /* When the last army has died bring up the end screen.
