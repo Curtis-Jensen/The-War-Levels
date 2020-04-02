@@ -1,31 +1,44 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 public class NArmy : Army
 {
     public GameObject spear;
     public float spear_speed = 100f;
+    public static NArmy[] nArmies;
 
     [HideInInspector] public bool selected;
     private static int armNum;//How many armies are on the field
     private Vector3 clickPosition;
-    public static NArmy[] nArmies;
     private TextManager tManage;
+    private SpriteRenderer flagSprite;
+
+    /* So the armies are more visable during editing.
+    */
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawCube(transform.position, Vector3.one);
+    }
 
     /* In order to properly know when all Nephites have died at the end
      * all the Nephite armies need to be counted at the beginning
      * 
      * Gets NArmy specific data from Managers
+     * Creates information used for changing the flag sprite.
      */
     protected override void Start()
     {
-        //Fire_point_spawner();
         armNum++;
         GenerateNarmies();
+
         base.Start();
         tManage = data.tManage;
+
+        flagSprite = GetComponent<AIDestinationSetter>().target.GetComponent<SpriteRenderer>();
     }
 
     public void GenerateNarmies()
@@ -95,43 +108,54 @@ public class NArmy : Army
 
     /* Highlights, then makes sure that the navigation scripts know which NArmy is the important one.
      * 
-     * If we run into performance issues this could be optimized to only deselect the old army and not eveyone.
+     * Toggle the sprite renderer on the clickmanagers as well.
+     * 
+     * If we run into performance issues this could be optimized to deselect the old army through caching.
      */
     private void OnMouseDown()
     {
-        foreach (NArmy narmy in nArmies) { 
-        
-            if(narmy == null)
-            {
-                GenerateNarmies();
-                OnMouseDown();
-                break;
-            }
-            narmy.Unhighlight();
-            narmy.selected = false;
-        }
-        selected = true;
+        UnselectAll();
+        SelectSelf();
         Highlight();
     }
 
-    /* So the armies are more visable during editing.
-    */
-    void OnDrawGizmos()
+    /* Marks the narmy as the one being commanded.
+     */
+    public void SelectSelf()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawCube(transform.position, Vector3.one);
+        flagSprite.color = new Color(1f, 1f, 1f, 1f);
+        selected = true;
+    }
+
+    /* "At ease Narmies!!"
+     */
+    public void UnselectAll()
+    {
+        foreach (NArmy narmy in nArmies)
+        {
+            if (narmy == null)
+            {
+                GenerateNarmies();
+                UnselectAll();
+                break;
+            }
+            if (narmy.selected)
+            {
+                narmy.Unhighlight();
+                narmy.selected = false;
+                narmy.flagSprite.color = new Color(1f, 1f, 1f, .2f);
+                break;
+            }
+        }
     }
 
     /* When the last army has died bring up the end screen.
-     * Restructure the narmies but not somehow after we're dead...
      */
     protected override void Die()
     {
         armNum--;
-        if (armNum < 1)
-        {
-            tManage.MormonsLament();
-        }
+        if (armNum < 1) tManage.MormonsLament();
+        Destroy(flagSprite.gameObject);
 
         base.Die();
     }
