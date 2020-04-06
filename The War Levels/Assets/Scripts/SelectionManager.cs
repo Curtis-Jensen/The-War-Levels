@@ -5,8 +5,10 @@ using UnityEngine;
 public class SelectionManager : MonoBehaviour
 {
     private bool isDragging = false;
+    private bool selecting = false;
     private Vector3 mousePosition;//May need to be called sommething like lastMousePosition
     private NArmy[] narmies;
+    private ArrayList selectedNarmyIndicies = new ArrayList();
 
     /* When The player clicks start to draw a rectangle for selection.
      * Any narmies that were selected get set as selected.
@@ -24,11 +26,17 @@ public class SelectionManager : MonoBehaviour
         }
     }
 
-    /* 
+    /* When the mouse button comes up find out what of all the selected armies within the box are.
+     * 
+     * Make a group of narmies to select.
+     * See if they're in the bounds.
+     * If one is in the bounds unselect all and select the ones in bounds.
+     * 
+     * This is to make sure the narmies are being selected and unseleccted correctly.
      */
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))//Getting initial mouse position
         {
             mousePosition = Input.mousePosition;
             isDragging = true;
@@ -36,10 +44,23 @@ public class SelectionManager : MonoBehaviour
         else if (Input.GetMouseButtonUp(0))
         {
             narmies = GetComponentsInChildren<NArmy>();
-            narmies[0].UnselectAll();
-            foreach (NArmy narmy in narmies)
+            for (int i = 0; i < narmies.Length; i++)
             {
-                if (isWithinSelectionBounds(narmy.transform)) narmy.SelectSelf();
+                if (isWithinSelectionBounds(narmies[i].transform))
+                {
+                    selecting = true;
+                    selectedNarmyIndicies.Add(i);
+                }
+            }
+
+            if (selecting)
+            {
+                narmies[0].UnselectAll();
+                foreach(int i in selectedNarmyIndicies)
+                {
+                    narmies[i].SelectSelf();
+                }
+                selecting = false;
             }
             isDragging = false;
         }
