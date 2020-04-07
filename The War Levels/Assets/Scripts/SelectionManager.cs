@@ -56,10 +56,9 @@ public class SelectionManager : MonoBehaviour
             if (selecting)
             {
                 narmies[0].UnselectAll();
-                foreach(int i in selectedNarmyIndicies)
-                {
-                    narmies[i].SelectSelf();
-                }
+                foreach (int i in selectedNarmyIndicies)  narmies[i].SelectSelf();
+
+                selectedNarmyIndicies = new ArrayList();
                 selecting = false;
             }
             isDragging = false;

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 #pragma warning disable CS0252 // Possible unintended reference comparison; left hand side needs cast
@@ -7,8 +8,10 @@ public class LArmy : Army
 {
     public GameObject lamanite_army;
     public static NArmy[] narmies;
+    public Vector3 spawnPoint;
 
     private List<Transform> narmyTargets = new List<Transform>();
+    private List<Transform> selectedNarmies = new List<Transform>();
     private GameObject nephi;
 
     /* So the armies are more visable during editing.
@@ -33,7 +36,7 @@ public class LArmy : Army
         narmies = nephi.GetComponentsInChildren<NArmy>();
     }
 
-    /* Manage navigation for each Narmy targeting th
+    /* Manage navigation for each Narmy targeting this larmy.
      * 
      * If the player right clicks and the Narmy targeting is selected
      * set clickManager to null.
@@ -46,19 +49,13 @@ public class LArmy : Army
         for (int i = 0; i < narmyTargets.Count; i++)
         {
             if (narmyTargets[i] == null || 
-                    Input.GetMouseButtonDown(1) && narmyTargets[i] == FindSelectedNArmy())
+                    Input.GetMouseButtonDown(1) && selectedNarmies.Contains(narmyTargets[i]))
             {
                 narmyTargets.RemoveAt(i);
                 continue;
             }
             narmyTargets[i].position = transform.position;
         }
-
-        //if (Input.GetMouseButtonDown(1) && narmyTargets[0] == FindSelectedNArmy())
-        //    narmyTargets[0] = null;
-        
-        //else if (narmyTargets[0] != null)
-        //    narmyTargets[0] = transform.position;
     }
 
     /* When the player left clicks on a LArmy the navigating NArmy will track this LArmy.
@@ -67,35 +64,45 @@ public class LArmy : Army
      */
     void OnMouseDown()
     {
-        narmyTargets.Add(FindSelectedNArmy());
+        foreach(Transform selectedNarmy in FindSelectedNarmies())
+        {
+            narmyTargets.Add(selectedNarmy);
+        }
     }
 
-    Transform FindSelectedNArmy()
+    /* Looks throught the narmies to see which ones are selected
+     */
+    List<Transform> FindSelectedNarmies()
     {
+        selectedNarmies = new List<Transform>();
         foreach (NArmy narmy in narmies)
         {
             if (narmy == null)
             {
                 GenerateNarmies();
-                FindSelectedNArmy();
+                FindSelectedNarmies();
                 break;
             }
             if (narmy.selected)
-                return GameObject.Find("Nav " + narmy.name).GetComponent<Transform>();
+                selectedNarmies.Add(GameObject.Find("Nav " + narmy.name).GetComponent<Transform>());
         }
-        return null;
+        return selectedNarmies;
     }
 
     /* The Lamanites spawn new Lamanites when they die because they were "innumerable" in
      * the battle, so they are infinite in code.
      * 
-     * Makes sure the name is correct for navigation purposes.
+     * Makes sure the name is correct in order to find the navigation manager.
+     * 
+     * Create it's own navigation manager and call FindTarget() on the new AIDestinationSetter.
      */
     protected override void Die()
     {
-        GameObject lamanite = Instantiate(lamanite_army, new Vector3(5.478f, -0.687f, 0), Quaternion.identity);
+        GameObject lamanite = Instantiate(lamanite_army, spawnPoint,
+            Quaternion.identity, transform.parent);
         lamanite.GetComponent<LArmy>().soldierNumber = 10000;
         lamanite.name = name;
+        lamanite.GetComponent<AIDestinationSetter>().FindTarget();
         base.Die();
     }
 }

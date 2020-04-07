@@ -11,7 +11,7 @@ public class NArmy : Army
     public static NArmy[] nArmies;
 
     [HideInInspector] public bool selected;
-    private static int armNum;//How many armies are on the field
+    private static int armyNum;//How many armies are on the field
     private Vector3 clickPosition;
     private TextManager tManage;
     private SpriteRenderer flagSprite;
@@ -32,7 +32,7 @@ public class NArmy : Army
      */
     protected override void Start()
     {
-        armNum++;
+        armyNum++;
         GenerateNarmies();
 
         base.Start();
@@ -116,13 +116,14 @@ public class NArmy : Army
     {
         UnselectAll();
         SelectSelf();
-        Highlight();
     }
 
     /* Marks the narmy as the one being commanded.
+     * Makes flag opaque.
      */
     public void SelectSelf()
     {
+        Highlight();
         flagSprite.color = new Color(1f, 1f, 1f, 1f);
         selected = true;
     }
@@ -144,7 +145,6 @@ public class NArmy : Army
                 narmy.Unhighlight();
                 narmy.selected = false;
                 narmy.flagSprite.color = new Color(1f, 1f, 1f, .2f);
-                break;
             }
         }
     }
@@ -153,8 +153,8 @@ public class NArmy : Army
      */
     protected override void Die()
     {
-        armNum--;
-        if (armNum < 1) tManage.MormonsLament();
+        armyNum--;
+        if (armyNum < 1) tManage.MormonsLament();
         Destroy(flagSprite.gameObject);
 
         base.Die();

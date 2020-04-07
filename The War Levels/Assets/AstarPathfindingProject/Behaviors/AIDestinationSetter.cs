@@ -18,14 +18,26 @@ namespace Pathfinding {
 		public Transform target;
 		IAstarAI ai;
 
-		/* Automaically find the navigation target by looking for the name.
-		 * For instance "Narmy (1)" would look for "Nav Narmy (1)"
-		 */
-		void Start() {
-			target = GameObject.Find("Nav " + name).transform;
+		protected override void Awake() 
+		{
+			FindTarget();
+			base.Awake();
 		}
 
-		void OnEnable () {
+		/* Automaically find the navigation target by looking for the name.
+		 * For instance "Narmy (1)" would look for "Nav Narmy (1)"
+		 * 
+		 * If no such army exists (as with respawning and creating new armies)
+		 * that army should create it's own navigation manager and attempt to find it again.
+		 */
+		public void FindTarget()
+		{
+			GameObject targetObject = GameObject.Find("Nav " + name);
+			if(targetObject != null)  target = targetObject.transform;
+		}
+
+		void OnEnable () 
+		{
 			ai = GetComponent<IAstarAI>();
 			// Update the destination right before searching for a path as well.
 			// This is enough in theory, but this script will also update the destination every
@@ -34,12 +46,14 @@ namespace Pathfinding {
 			if (ai != null) ai.onSearchPath += Update;
 		}
 
-		void OnDisable () {
+		void OnDisable () 
+		{
 			if (ai != null) ai.onSearchPath -= Update;
 		}
 
 		/// <summary>Updates the AI's destination every frame</summary>
-		void Update () {
+		void Update () 
+		{
 			if (target != null && ai != null) ai.destination = target.position;
 		}
 	}
