@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class LamaniteTargeter : MonoBehaviour
 {
-    static Transform[] possibleTargets;
+    private static Transform[] possibleTargets;
 
     /* Gets the manager for the Nephites via the navigation manager to find the enemy.
      */
-    void Start(){
+    void Start()
+    {
         FillPossibleTargets();
     }
 
@@ -17,14 +18,12 @@ public class LamaniteTargeter : MonoBehaviour
      */
     void Update()
     {
-        foreach(Transform transform in possibleTargets)
-        {
-            if (transform == null)  FillPossibleTargets();
-        }
+        foreach(Transform transform in possibleTargets)  if (transform == null)  FillPossibleTargets();
         transform.position = possibleTargets[DetermineShortestDistance()].position;
+        //FillPossibleTargets() could be called by the nav manager whenever a nephite dies since 
     }
 
-    /* Checks to see which enemy army is closest to the army the script is attached to.
+    /* Checks to see which enemy army is closest to the army the script is attached to by comparing distances.
      * 
      * If there is only one Narmy so that no comarisons can take place this should return 1.
      * 
@@ -35,25 +34,22 @@ public class LamaniteTargeter : MonoBehaviour
      */
     int DetermineShortestDistance()
     {
-        int theClosestIndex = 0;
-        if (possibleTargets.Length > 2)
+        int theClosestIndex = 1;
+        for (int i = 2; i < possibleTargets.Length; i++)
         {
-            for (int i = 2; i < possibleTargets.Length; i++)
+            if (Vector3.Distance(possibleTargets[i].position, transform.position) <
+                Vector3.Distance(possibleTargets[i - 1].position, transform.position) &&
+                possibleTargets[i] != null)
             {
-                if (Vector3.Distance(possibleTargets[i].position, transform.position) <
-                    Vector3.Distance(possibleTargets[i - 1].position, transform.position) &&
-                    possibleTargets[i] != null)
-                {
-                    theClosestIndex = i;
-                }
+                theClosestIndex = i;
             }
         }
-        else if (possibleTargets.Length > 1)  theClosestIndex = 1;
 
         return theClosestIndex;
     }
 
-    /* Called at start or when an army is killed or created. 
+    /* Called at start or when an army is killed or created.
+     * possibleTargets[0] is usually Nephi, but it's set to food so that food can be a target.
      */
     public void FillPossibleTargets()
     {

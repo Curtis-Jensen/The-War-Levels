@@ -13,7 +13,7 @@ public class NArmy : Army
     [HideInInspector] public bool selected;
     private static int armyNum;//How many armies are on the field
     private Vector3 clickPosition;
-    private TextManager tManage;
+    private TextManager textManager;
     private SpriteRenderer flagSprite;
 
     /* So the armies are more visable during editing.
@@ -36,7 +36,7 @@ public class NArmy : Army
         GenerateNarmies();
 
         base.Start();
-        tManage = data.tManage;
+        textManager = data.tManage;
 
         flagSprite = GetComponent<AIDestinationSetter>().target.GetComponent<SpriteRenderer>();
     }
@@ -154,7 +154,7 @@ public class NArmy : Army
     protected override void Die()
     {
         armyNum--;
-        if (armyNum < 1) tManage.MormonsLament();
+        if (armyNum < 1) textManager.MormonsLament();
         Destroy(flagSprite.gameObject);
 
         base.Die();
