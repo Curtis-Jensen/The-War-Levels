@@ -10,7 +10,7 @@ public class TextManager : MonoBehaviour
     public GameObject aICTPbutton;
     public PauseManager pauser;
     public Scrollbar scrollbar;
-    [TextArea(3, 10)]
+    [TextArea(2, 20)]
     public string outroText;
 
     /* Toggles the activity of the text objects,
@@ -26,7 +26,7 @@ public class TextManager : MonoBehaviour
 
     public void MormonsLament()//Activates the final message
     {
-        textHolder.GetComponent<Text>().text = outroText;//Makes the message appropriate
+        textHolder.GetComponent<Text>().text = gameObject.GetComponentInParent<PassageSelector>().SelectPassage();
         aICTPbutton.GetComponentInChildren<Text>().text = "THE END";//Button says the end
         TextToggle(true);//Turns on the text box
     }

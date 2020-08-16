@@ -353,7 +353,7 @@ PrefabInstance:
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
@@ -900,13 +900,13 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 459451680}
   - {fileID: 415674790}
   - {fileID: 896383932}
   - {fileID: 2088417709}
   - {fileID: 1366558484}
   - {fileID: 183696049}
   - {fileID: 1558031937}
-  - {fileID: 459451680}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1247,11 +1247,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 459451679}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.204114, y: 31.54, z: 0}
+  m_LocalPosition: {x: -1.28, y: 42.37, z: 0}
   m_LocalScale: {x: 7.533, y: 4.12, z: 1}
   m_Children: []
   m_Father: {fileID: 406009036}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &459451681
 SpriteRenderer:
@@ -1539,7 +1539,7 @@ PrefabInstance:
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
@@ -1623,7 +1623,7 @@ PrefabInstance:
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
@@ -2703,7 +2703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f10233238ab19c499b66f615d1a50b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soldierNumber: 10000
+  soldierNumber: 0
+  initialSoldierNumber: 10000
   lamanite_army: {fileID: 1053051737}
   spawnPoint: {x: 0, y: 0, z: 0}
 --- !u!212 &1053051745
@@ -3829,7 +3830,7 @@ PrefabInstance:
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
@@ -4075,7 +4076,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f10233238ab19c499b66f615d1a50b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soldierNumber: 10000
+  soldierNumber: 0
+  initialSoldierNumber: 10000
   lamanite_army: {fileID: 1438056892}
   spawnPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &1533524738
@@ -4273,7 +4275,7 @@ PrefabInstance:
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
@@ -5067,6 +5069,7 @@ MonoBehaviour:
   - {fileID: 1101317211}
   - {fileID: 1438056896}
   - {fileID: 1053051742}
+  projectileHolder: {fileID: 0}
 --- !u!4 &2088417709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
@@ -5226,7 +5229,7 @@ PrefabInstance:
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7675456694259922389, guid: a5fb335b96c5e994eaf2490af37b98b7,
         type: 3}

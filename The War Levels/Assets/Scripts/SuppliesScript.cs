@@ -9,7 +9,7 @@ public class SuppliesScript : MonoBehaviour
     /* When a Larmy collides start reducing health, when destroyed call the end.
      * 
      * Make sure the collisions aren't coming from the Nephites.
-     * Could inherit some things from battle calculations from Army.cs???
+     * Inherits the shrinking function from Army.
      */
     void OnCollisionEnter2D(Collision2D other)
     {

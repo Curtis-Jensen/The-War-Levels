@@ -15,6 +15,7 @@ public class NArmy : Army
     private Vector3 clickPosition;
     private TextManager textManager;
     private SpriteRenderer flagSprite;
+    private GameObject projectileHolder;
 
     /* So the armies are more visable during editing.
     */
@@ -37,6 +38,7 @@ public class NArmy : Army
 
         base.Start();
         textManager = data.tManage;
+        projectileHolder = data.projectileHolder;
 
         flagSprite = GetComponent<AIDestinationSetter>().target.GetComponent<SpriteRenderer>();
     }
@@ -59,26 +61,24 @@ public class NArmy : Army
         }
     }
 
-    /* Make the projectile appear,
-     * Make sure collisions with the player don't count,
-     * Make the projectile move somewhere.
+    /* saves the position of the mouse's click in the world's plane
+     * instantiates a new spear in the same location as this object
+     * creates a line from click position to this objects position
+     * new_spear ignores collision with the army it's fired from
      */
     internal void Fire_projectile(string message)
     {
        if (message == "Spear")
-        {
-            //saves the position of the mouse's click in the world's plane
+       {
             clickPosition = GetWorldPositionOnPlane(Input.mousePosition, 0);
-            //creates a line from click position to this objects position
             Vector2 direction = (clickPosition - transform.position).normalized;
-            //instantiates a new spear in the same location as the this object
-            GameObject new_spear = Instantiate(spear, transform.position, Quaternion.identity, transform.parent);
-            //new_spear ignores collision 
+            GameObject new_spear = 
+                Instantiate(spear, transform.position, Quaternion.identity, projectileHolder.transform);
             Physics2D.IgnoreCollision(new_spear.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
             new_spear.transform.right = direction;
-            new_spear.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x * spear_speed, direction.y * spear_speed);
-
-        }
+            new_spear.GetComponent<Rigidbody2D>().velocity = 
+                new Vector2(direction.x * spear_speed, direction.y * spear_speed);
+       }
     }
 
     /* Assists in clicking when isometric.

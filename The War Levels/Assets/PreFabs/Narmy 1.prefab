@@ -302,7 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5fab8a63a0b39409ecdedc2ec8235b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soldierNumber: 4500
+  soldierNumber: 0
+  initialSoldierNumber: 4500
   spear: {fileID: 6391598586334554031, guid: fd7e83942d611f846a95e5f5a9aa80cf, type: 3}
   spear_speed: 100
   selected: 0

@@ -13,14 +13,12 @@ public class ArmoryDataHolder : MonoBehaviour
     public float armySpeed;
     public TextManager tManage;
     public AIPath[] navigators;
+    public GameObject projectileHolder;
 
     /* Sets the speed and acceleration for all armies.
      */
     void Start()
     {
-        foreach (AIPath navigator in navigators)
-        {
-            navigator.maxSpeed = armySpeed;
-        }
+        foreach (AIPath navigator in navigators)  navigator.maxSpeed = armySpeed;
     }
 }

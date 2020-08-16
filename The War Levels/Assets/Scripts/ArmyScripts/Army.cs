@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class Army : MonoBehaviour
 {
     public int soldierNumber;//How many soldiers the army has
+    public int initialSoldierNumber;
 
     private int baseDamage;//How much damage is done before flanking and other modifiers are applied.
     private int flankingDefense;//How much defense is gained from being attacked by an army the army is gocussed on.
@@ -28,11 +29,12 @@ public abstract class Army : MonoBehaviour
     {
         data = GameObject.Find("Managers").GetComponent<ArmoryDataHolder>();
         baseDamage      = data.baseDamage;
+        totalDamage = baseDamage;
         flankingDefense = data.flankingDefense;
         maxAttackTimer  = data.maxAttackTimer;
         nav = GetComponent<AIPath>();
 
-        Shrink(-soldierNumber);//So that at the start the army is appropriately sized
+        Shrink(-initialSoldierNumber);//So that at the start the army is appropriately sized
     }
 
     /* Checks to see if the collision was with an enemy by comparing tags.
@@ -52,28 +54,10 @@ public abstract class Army : MonoBehaviour
     {
         if (other.transform.tag == "Projectile" && gameObject.tag == "Lamanites")
         {
-            Damage_unit(totalDamage, 2);
+            Shrink(totalDamage);
+            soldierNumber -= totalDamage;
             Destroy(other.gameObject);
         }
-    }
-    /**
-    * Damages unit by calling shrink and changing soilder number at the same time CALL THIS IF YOU NEED TO DAMAGE SOMETHING.
-    * 
-    **/
-    void Damage_unit(int number)
-    {
-        Shrink(totalDamage);
-        soldierNumber -= totalDamage;
-    }
-    /**
-    * Damages unit by calling shrink and changing soilder number at the same time CALL THIS IF YOU NEED TO DAMAGE SOMETHING.
-    * 
-    * Can also be multiplied by a number, if no multiplication is intended, just put 1 in the second parameter.
-    **/
-    void Damage_unit(int number, int multiplier)
-    {
-        Shrink(totalDamage * multiplier);
-        soldierNumber -= totalDamage * multiplier;
     }
 
     void OnCollisionStay2D(Collision2D other)
@@ -99,21 +83,20 @@ public abstract class Army : MonoBehaviour
     void BattleCalculations(Collision2D other)
     {
         totalDamage = baseDamage;
-        if ((int)other.transform.position.x == (int)nav.target.position.x)
-            totalDamage /= flankingDefense;
+        if ((int)other.transform.position.x == (int)nav.target.position.x)  totalDamage /= flankingDefense;
 
         soldierNumber -= totalDamage;
         Shrink(totalDamage);
 
         attackTimer = maxAttackTimer;
-        if (soldierNumber < 1)
-            Die();
+        if (soldierNumber < 1)  Die();
     }
 
-    /* Changes the size of the army (typically when an army takes damage)
+    /* Changes the amount of men in the army and the size of the army accordingly
+     * (typically when an army takes damage)
      * 
      * We should probably have this script change the amount of men the army has so we don't have duplicate lines of
-     * code, but we'll optimize that later... >.>
+     * code, but we'll optimize that later... >.> THE TIME IS NOW (May 13, 2020)
      */
     public void Shrink(int damage)
     {
@@ -121,6 +104,8 @@ public abstract class Army : MonoBehaviour
         theScale.x -= (.0005f * (float)damage);
         theScale.y -= (.0005f * (float)damage);
         transform.localScale = theScale;//Applies the vector
+
+        soldierNumber -= damage;
     }
 
     /* Destroys self.

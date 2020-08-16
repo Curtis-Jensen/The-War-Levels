@@ -97,10 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f10233238ab19c499b66f615d1a50b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAttackTimer: 0.25
   soldierNumber: 0
-  damage: 100
+  initialSoldierNumber: 10000
   lamanite_army: {fileID: 1824860909078207692}
+  spawnPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &1824860909078207665
 MonoBehaviour:
   m_ObjectHideFlags: 0

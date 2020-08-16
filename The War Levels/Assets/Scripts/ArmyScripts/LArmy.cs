@@ -100,7 +100,7 @@ public class LArmy : Army
     {
         GameObject lamanite = Instantiate(lamanite_army, spawnPoint,
             Quaternion.identity, transform.parent);
-        lamanite.GetComponent<LArmy>().soldierNumber = 10000;
+        //lamanite.GetComponent<LArmy>().soldierNumber = 10000;
         lamanite.name = name;
         lamanite.GetComponent<AIDestinationSetter>().FindTarget();
         base.Die();
