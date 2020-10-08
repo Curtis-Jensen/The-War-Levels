@@ -3730,7 +3730,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1976394242}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.30393532
+  m_Size: 0.30393508
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5055,7 +5055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ae5c18de99a7d4abf2f1bc504f4214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 100
+  baseDamage: 200
   flankingDefense: 10
   maxAttackTimer: 0.01
   armySpeed: 3

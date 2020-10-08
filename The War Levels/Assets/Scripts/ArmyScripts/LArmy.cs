@@ -8,10 +8,10 @@ public class LArmy : Army
 {
     public GameObject lamanite_army;
     public static NArmy[] narmies;
-    public Vector3 spawnPoint;
 
     private List<Transform> narmyTargets = new List<Transform>();
     private List<Transform> selectedNarmies = new List<Transform>();
+    private Vector3 spawnPoint;
     private GameObject nephi;
 
     /* So the armies are more visable during editing.
@@ -22,12 +22,16 @@ public class LArmy : Army
         Gizmos.DrawCube(transform.position, Vector3.one);
     }
 
-    /* Get acquainted with Nephi and his children to later be targeted by them.
+    /* Get acquainted with Nephi and his children to later target them.
+     * 
+     * Keep in mind the spawn point so that whoever replaces them for The Nephite's End goes there
      */
     protected override void Start()
     {
         nephi = GameObject.Find("Nephi");
         GenerateNarmies();
+
+        spawnPoint = transform.position;
         base.Start();
     }
 
@@ -92,6 +96,8 @@ public class LArmy : Army
     /* The Lamanites spawn new Lamanites when they die because they were "innumerable" in
      * the battle, so they are infinite in code.
      * 
+     * Spawns a new Larmy where this one started.
+     * 
      * Makes sure the name is correct in order to find the navigation manager.
      * 
      * Create it's own navigation manager and call FindTarget() on the new AIDestinationSetter.
@@ -100,7 +106,7 @@ public class LArmy : Army
     {
         GameObject lamanite = Instantiate(lamanite_army, spawnPoint,
             Quaternion.identity, transform.parent);
-        //lamanite.GetComponent<LArmy>().soldierNumber = 10000;
+
         lamanite.name = name;
         lamanite.GetComponent<AIDestinationSetter>().FindTarget();
         base.Die();

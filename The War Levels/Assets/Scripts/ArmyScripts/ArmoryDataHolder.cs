@@ -19,6 +19,9 @@ public class ArmoryDataHolder : MonoBehaviour
      */
     void Start()
     {
-        foreach (AIPath navigator in navigators)  navigator.maxSpeed = armySpeed;
+        foreach (AIPath navigator in navigators)
+        {
+            if(navigator != null)  navigator.maxSpeed = armySpeed;
+        }
     }
 }

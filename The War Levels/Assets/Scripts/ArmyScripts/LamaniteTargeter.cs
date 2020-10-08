@@ -18,7 +18,10 @@ public class LamaniteTargeter : MonoBehaviour
      */
     void Update()
     {
-        foreach(Transform transform in possibleTargets)  if (transform == null)  FillPossibleTargets();
+        foreach (Transform transform in possibleTargets)
+        {
+            if (transform == null) FillPossibleTargets();
+        }
         transform.position = possibleTargets[DetermineShortestDistance()].position;
         //FillPossibleTargets() could be called by the nav manager whenever a nephite dies since 
     }
