@@ -74,6 +74,20 @@ public class LArmy : Army
         }
     }
 
+    /* Called every frame of a collision.
+ * 
+ * When a collision with an enemy has happened long enough they go through battle calculations.
+ */
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.transform.CompareTag("Projectile"))
+        {
+            Shrink(totalDamage);
+            soldierNumber -= totalDamage;
+            Destroy(other.gameObject);
+        }
+    }
+
     /* Looks throught the narmies to see which ones are selected
      */
     List<Transform> FindSelectedNarmies()

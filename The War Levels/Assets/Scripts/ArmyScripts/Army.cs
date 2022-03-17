@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Pathfinding;
+﻿using Pathfinding;
 using UnityEngine;
 
 public abstract class Army : MonoBehaviour
@@ -11,7 +9,7 @@ public abstract class Army : MonoBehaviour
     private int baseDamage;//How much damage is done before flanking and other modifiers are applied.
     private int flankingDefense;//How much defense is gained from being attacked by an army the army is gocussed on.
     private int adjacentArmies;
-    private int totalDamage;//However much damage actually gets applied to the army.
+    protected int totalDamage;//However much damage actually gets applied to the army.
     private int otherArmysSoldiers;
     private float maxAttackTimer;
     private float attackTimer;
@@ -46,19 +44,6 @@ public abstract class Army : MonoBehaviour
         return (otherTag == "Nephites" && myTag == "Lamanites") || (otherTag == "Lamanites" && myTag == "Nephites");
     }
 
-    /* Called every frame of a collision.
-     * 
-     * When a collision with an enemy has happened long enough they go through battle calculations.
-     */
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.transform.tag == "Projectile" && gameObject.tag == "Lamanites")
-        {
-            Shrink(totalDamage);
-            soldierNumber -= totalDamage;
-            Destroy(other.gameObject);
-        }
-    }
 
     void OnCollisionStay2D(Collision2D other)
     {
