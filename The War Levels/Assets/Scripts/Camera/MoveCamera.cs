@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move_Cam : MonoBehaviour
+public class MoveCamera : MonoBehaviour
 {
     public float moveSpeed;
     public float zoomSpeed;

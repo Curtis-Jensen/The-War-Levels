@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZOOM : MonoBehaviour
+public class Zoom : MonoBehaviour
 {
 
     private Camera cam;
