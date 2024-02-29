@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 37c53e4bfb2b7034cac2b79a04662711
   - enabled: 1
-    path: Assets/Scenes/The Nephite's End.unity
+    path: Assets/Scenes/Real Time Scene.unity
     guid: 4a4b94f550bda6d4198aec3a4c116690
   m_configObjects: {}
