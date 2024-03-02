@@ -7,7 +7,9 @@ public class Tile : MonoBehaviour
     public Color baseColor, offsetColor;
     private SpriteRenderer renderer;
 
-    private void Awake()
+    public GameObject highlight;
+
+    void Awake()
     {
         renderer = gameObject.GetComponent<SpriteRenderer>();
     }
@@ -18,5 +20,15 @@ public class Tile : MonoBehaviour
             renderer.color = offsetColor;
         else
             renderer.color = baseColor;
+    }
+
+    void OnMouseEnter()
+    {
+        highlight.SetActive(true);
+    }    
+    
+    void OnMouseExit()
+    {
+        highlight.SetActive(false);
     }
 }
