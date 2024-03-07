@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
     public int width, height;
-    public Tile tilePrefab;
+    public Tile grassTile;
+    public Tile mountainTile;
     public Transform cam;
 
     private void Start()
@@ -19,8 +21,15 @@ public class GridManager : MonoBehaviour
         {
             for (int y = 0; y < height; y++)
             {
-                var spawnedTile = Instantiate(tilePrefab, new Vector3(x, y), Quaternion.identity, transform);
-                spawnedTile.name = $"Tile ({x},{y})";
+                Tile randomTile = grassTile;
+
+                var rand = Random.Range(0, 6);
+                if (rand == 5)
+                    randomTile = mountainTile;
+
+                var spawnedTile = Instantiate(randomTile, new Vector3(x, y), Quaternion.identity, transform);
+                var type = Regex.Replace(randomTile.GetType().Name, "(\\B[A-Z])", " $1");
+                spawnedTile.name = $"{type} ({x},{y})";
 
                 var evenHorizontal = x % 2 == 0;
                 var evenVertical =   y % 2 == 0;
