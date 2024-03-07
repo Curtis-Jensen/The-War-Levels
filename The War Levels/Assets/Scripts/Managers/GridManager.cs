@@ -5,17 +5,18 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
+    public static GridManager instance;
     public int width, height;
     public Tile grassTile;
     public Tile mountainTile;
     public Transform cam;
 
-    private void Start()
+    void Awake()
     {
-        GenerateGrid();
+        instance = this;
     }
 
-    void GenerateGrid()
+    public void GenerateGrid()
     {
         for (int x = 0; x < width; x++)
         {

@@ -44,3 +44,6 @@ Thumbs.db
 @FullStackForger
 Packing Game/.vs/Packing Game/v15/Server/sqlite3/storage.ide-shm
 The War Levels/Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Roboto-Bold SDF.asset
+/The War Levels/Logs/AssetImportWorker0.log
+/The War Levels/Logs/shadercompiler-AssetImportWorker0.log
+/The War Levels/Logs/shadercompiler-UnityShaderCompiler.exe0.log
