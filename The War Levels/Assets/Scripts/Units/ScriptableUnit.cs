@@ -6,6 +6,7 @@ using UnityEngine;
 public class ScriptableUnit : ScriptableObject
 {
     public Faction faction;
+    public BaseUnit unitPrefab;
 }
 
 public enum Faction
